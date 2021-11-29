@@ -155,6 +155,11 @@ const secondBottomPage =()=>{
                              <Text style={styles.container5}>SEE ALL</Text>
                           </View>  
 
+                          <View style={[styles.container6,styles.container8]}>
+                             <Text style={styles.container4}>BEER WINE & SPIRIT</Text>
+                             <Text style={styles.container5}>SEE ALL</Text>
+                          </View> 
+
                       </View>
                    </View>
                
