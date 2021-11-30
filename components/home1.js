@@ -128,8 +128,8 @@ const carl =()=>{
 
     return( 
         <SafeAreaView style={styles.container}>
-        <View >
-           <SafeAreaView >
+        <View > 
+            <SafeAreaView >
            {/* <View style={styles.container1}>
                 <View style={{paddingHorizontal:10,flexDirection:'row',alignItems:'center'}}>
                    <Ionicons name="md-search" size={20} color="#808080" style={styles.container2} />

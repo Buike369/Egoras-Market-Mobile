@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text} from 'react-native';
+import {View,Text,SafeAreaView} from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {Ionicons } from 'react-native-vector-icons';
 import Fold from './home1';
@@ -14,6 +14,7 @@ const Tab = createBottomTabNavigator();
 
 export default function book(){
     return(
+     
         <Tab.Navigator>
         <Tab.Screen name="Home10" component={Fold} options={{headerShown:false ,tabBarLabel:'Home',tabBarLabelStyle:{color:'#28b67d',fontSize:12}, tabBarIcon: () => (
             <Ionicons name="home" color='#28b67d' size={20} />
@@ -31,5 +32,6 @@ export default function book(){
             <Ionicons name="help-circle-outline" color='#28b67d' size={25} />
           ),}}/>
       </Tab.Navigator>
+     
     )
 }

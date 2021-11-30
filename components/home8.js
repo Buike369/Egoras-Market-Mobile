@@ -1,170 +1,170 @@
-import React from 'react';
-import {View,Text,StyleSheet,SafeAreaView,Image} from 'react-native';
-import Search1 from './home7'
+import React,{useState} from 'react';
+import {View,Text,StyleSheet,SafeAreaView,Image, ScrollView,Pressable} from 'react-native';
+import Search1 from './home7';
 import {Ionicons } from 'react-native-vector-icons';
+import AppLog6 from './home10';
+import AppLog1 from './home11';
+import AppLog2 from './home12';
+import AppLog3 from './home13';
+import AppLog4 from './home14';
+
 
 
 const secondBottomPage =()=>{
+
+
+ const [tab2,setTab2]=useState(<AppLog6/>)
+ const [colorChange,setColorChange]= useState(styles.container1);
+ const [colorChange1,setColorChange1]= useState(styles.container1);
+const [speed,setSpeed]= useState('bouy');
+// const [tab2,setTab] = useState(['orange1','orange2','orange3','orange4','orange5','orange6']);
+
+// const brief = ()=>{
+    
+//     if(speed === 'bouy'){
+//         setSpeed('bouy');
+//         setTab2(<AppLog6/>) 
+//     }
+
+//     if(speed === 'bouy1'){
+//         setSpeed('bouy1');
+//         setTab2(<AppLog1/>)   
+//     }
+// }
+
+const send =()=>{
+setSpeed('bouy1');
+setTab2(<AppLog1/>);
+}
+
+const send1 =()=>{
+    setSpeed('bouy');
+    setTab2(<AppLog6/>);
+    }
+
+    const send2 =()=>{
+        setSpeed('bouy2');
+        setTab2(<AppLog2/>);
+        }
+
+
+    const send3 =()=>{
+        setSpeed('bouy3');
+        setTab2(<AppLog3/>);
+        }
+
+        const send4 =()=>{
+            setSpeed('bouy4');
+            setTab2(<AppLog4/>);
+            }
+
+            const send5=()=>{
+                setSpeed('bouy5');
+                setTab2(<AppLog1/>);
+                }
+    
+         const send6=()=>{
+        setSpeed('bouy6');
+        setTab2(<AppLog2/>);
+        }
+
+    const send7=()=>{
+     setSpeed('bouy7');
+     setTab2(<AppLog3/>);
+    }
+
+
+    const send8=()=>{
+    setSpeed('bouy8');
+    setTab2(<AppLog4/>);
+    }
+
+    const send9=()=>{
+    setSpeed('bouy9');
+    setTab2(<AppLog6/>);
+    }
+
+    const send10=()=>{
+        setSpeed('bouy10');
+        setTab2(<AppLog1/>);
+        }
+     const send11=()=>{
+    setSpeed('bouy11');
+    setTab2(<AppLog2/>);
+    }
+// const see = ()=>{ 
+//     setTab2(<AppLog1/>);
+//     setColorChange1(color);
+// }
+
+// const see1= ()=>{
+//     setColorChange(color);
+//     setTab2(<AppLog6/>)
+// }
+
+// const wen = ()=>{
+//     tab2[0]=== <AppLog6/>
+// }
+
+const color ={
+    backgroundColor:'#f7f7f7',
+    // backgroundColor:'#28b67d',
+    // color:'white',
+    color:'#000',
+    paddingVertical:18,
+    paddingHorizontal:5,
+    fontSize:9,
+    textAlign:'center',
+    fontWeight:'300',
+    borderLeftWidth:3,
+    borderLeftColor:'#28b67d'
+    
+} 
+
+
     return(
 
-        <View style={styles.container}>
-            <SafeAreaView>
+       
+            <SafeAreaView  >
                <Search1/>
             
                    <View  style={{flexDirection:'row'}}>
                       <View style={styles.container2}>
-                        <Text style={styles.container1}>Grocery</Text>
-                        <Text style={styles.container1}>Health & Beauty</Text>
-                        <Text style={styles.container1}>Home & Office</Text>
-                        <Text style={styles.container1}>Phones & Tablets</Text>
-                        <Text style={styles.container1}>Computing</Text>
-                        <Text style={styles.container1}>Electronics</Text>
-                        <Text style={styles.container1}>Women's Fashion</Text>
-                        <Text style={styles.container1}>Men's Fashion</Text>
-                        <Text style={styles.container1}>Baby Products</Text>
-                        <Text style={styles.container1}>Gaming</Text>
-                        <Text style={styles.container1}>Sporting & Goods</Text>
-                        <Text style={styles.container1}>Automobile</Text>
+                      <Pressable onPress={send1}><View  style={speed === 'bouy'? color : styles.container1 } testID='bouy'><Text style={styles.yam}>Grocery</Text></View></Pressable>
+                      <Pressable onPress={send}><View style={speed === 'bouy1'? color : styles.container1} testID='bouy1'><Text style={styles.yam}>Health & Beauty</Text></View></Pressable>
+                       <Pressable onPress={send2}><View style={speed === 'bouy2'? color :styles.container1} testID='bouy2'><Text  style={styles.yam}>Home & Office</Text></View></Pressable>
+                       <Pressable  onPress={send3}><View style={speed === 'bouy3'? color :styles.container1} testID='bouy3'><Text style={styles.yam}>Phones & Tablets</Text></View></Pressable>
+                       <Pressable  onPress={send4}><View  style={speed === 'bouy4'? color :styles.container1} testID='bouy4'><Text style={styles.yam}>Computing</Text></View></Pressable>
+                       <Pressable onPress={send5}><View style={speed === 'bouy5'? color :styles.container1} testID='bouy5'><Text style={styles.yam}>Electronics</Text></View></Pressable>
+                       <Pressable onPress={send6}><View style={speed === 'bouy6'? color :styles.container1} testID='bouy6'><Text style={styles.yam}>Women's Fashion</Text></View></Pressable>
+                       <Pressable  onPress={send7}><View style={speed === 'bouy7'? color :styles.container1} testID='bouy7'><Text style={styles.yam}>Men's Fashion</Text></View></Pressable>
+                       <Pressable  onPress={send8}><View style={speed === 'bouy8'? color :styles.container1} testID='bouy8'><Text style={styles.yam}>Baby Products</Text></View></Pressable>
+                       <Pressable  onPress={send9}><View style={speed === 'bouy9'? color :styles.container1} testID='bouy9'><Text style={styles.yam}>Gaming</Text></View></Pressable>
+                       <Pressable onPress={send10}><View style={speed === 'bouy10'? color :styles.container1} testID='bouy10'><Text  style={styles.yam} >Sporting & Goods</Text></View></Pressable>
+                       <Pressable onPress={send11}><View style={speed === 'bouy11'? color :styles.container1} testID='bouy11'><Text  style={styles.yam} >Automobile</Text></View></Pressable>
                       </View>
+
+
+                      
+
                       <View style={styles.container3}>
-                          <View style={[styles.container6,styles.container7]}> 
-                             <Text style={{fontSize:9,color:'#000'}}>ALL PRODUCTS</Text>
-                             <Ionicons name="md-chevron-forward" size={15} color="#000"  />
-                          </View>
+                         <ScrollView> 
+                        
 
-                          <View style={[styles.container6,styles.container8]}>
-                             <Text style={styles.container4}>FOOD CUPBOARD</Text>
-                             <Text style={styles.container5}>SEE ALL</Text>
-                          </View>
+                     {
+                         tab2
+                         
+                     }
+  
+                         {/* <AppLog6/> */}
 
-                          <View style={{backgroundColor:'#28b67d',padding:3,borderBottomLeftRadius:3,borderBottomRightRadius:3,marginTop:3,marginBottom:10}}>
-                              <View style={{flexDirection:'row',justifyContent:'space-between',marginBottom:10}}>
-                                <View style={{alignItems:'center'}}>
-                                    <View style={{width:90,backgroundColor:'white',alignItems:'center',marginBottom:5}}>
-                                      <Image source={require('../assets/dream.jpg')} resizeMode="contain" style={{width:50,height:50,}}/>
-                                    </View>
-                                    <Text style={{fontSize:8,fontWeight:'300',color:'#000'}}>Grain & Rice</Text>
-                                </View>
-                                <View style={{alignItems:'center'}}>
-                                    <View style={{width:90,backgroundColor:'white',alignItems:'center',marginBottom:5}}>
-                                      <Image source={require('../assets/dream1.jpg')} resizeMode="contain" style={{width:50,height:50}}/>
-                                    </View>
-                                    <Text style={{fontSize:8,fontWeight:'300',color:'#000'}}>Paste</Text>
-                                </View>
-                                <View style={{alignItems:'center'}}>
-                                    <View style={{width:90,backgroundColor:'white',alignItems:'center',marginBottom:5}}>
-                                      <Image source={require('../assets/dream2.jpg')} resizeMode="contain" style={{width:50,height:50}}/>
-                                    </View>
-                                    <Text style={{fontSize:8,fontWeight:'300',color:'#000'}}>Noodles</Text>
-                                </View>
-                              </View>
-
-
-                              <View style={{flexDirection:'row',justifyContent:'space-between',marginBottom:10}}>
-                                <View style={{alignItems:'center'}}>
-                                    <View style={{width:90,backgroundColor:'white',alignItems:'center',marginBottom:5}}>
-                                      <Image source={require('../assets/dream4.jpg')} resizeMode="contain" style={{width:50,height:50,}}/>
-                                    </View>
-                                    <Text style={{fontSize:8,fontWeight:'300',color:'#000'}}>Grain & Rice</Text>
-                                </View>
-                                <View style={{alignItems:'center'}}>
-                                    <View style={{width:90,backgroundColor:'white',alignItems:'center',marginBottom:5}}>
-                                      <Image source={require('../assets/dream6.jpg')} resizeMode="contain" style={{width:50,height:50}}/>
-                                    </View>
-                                    <Text style={{fontSize:8,fontWeight:'300',color:'#000'}}>Paste</Text>
-                                </View>
-                                <View style={{alignItems:'center'}}>
-                                    <View style={{width:90,backgroundColor:'white',alignItems:'center',marginBottom:5}}>
-                                      <Image source={require('../assets/dream7.jpg')} resizeMode="contain" style={{width:50,height:50}}/>
-                                    </View>
-                                    <Text style={{fontSize:8,fontWeight:'300',color:'#000'}}>Noodles</Text>
-                                </View>
-                              </View>
-
-
-
-                              <View style={{flexDirection:'row',justifyContent:'space-between',marginBottom:10}}>
-                                <View style={{alignItems:'center'}}>
-                                    <View style={{width:90,backgroundColor:'white',alignItems:'center',marginBottom:5}}>
-                                      <Image source={require('../assets/dream8.jpg')} resizeMode="contain" style={{width:50,height:50,}}/>
-                                    </View>
-                                    <Text style={{fontSize:8,fontWeight:'300',color:'#000'}}>Grain & Rice</Text>
-                                </View>
-                                <View style={{alignItems:'center'}}>
-                                    <View style={{width:90,backgroundColor:'white',alignItems:'center',marginBottom:5}}>
-                                      <Image source={require('../assets/dream9.jpg')} resizeMode="contain" style={{width:50,height:50}}/>
-                                    </View>
-                                    <Text style={{fontSize:8,fontWeight:'300',color:'#000'}}>Paste</Text>
-                                </View>
-                                <View style={{alignItems:'center'}}>
-                                    <View style={{width:90,backgroundColor:'white',alignItems:'center',marginBottom:5}}>
-                                      <Image source={require('../assets/dream10.jpg')} resizeMode="contain" style={{width:50,height:50}}/>
-                                    </View>
-                                    <Text style={{fontSize:8,fontWeight:'300',color:'#000'}}>Noodles</Text>
-                                </View>
-                              </View>
-
-
-                              <View style={{flexDirection:'row',justifyContent:'space-between',marginBottom:10}}>
-                                <View style={{alignItems:'center'}}>
-                                    <View style={{width:90,backgroundColor:'white',alignItems:'center',marginBottom:5}}>
-                                      <Image source={require('../assets/dream.jpg')} resizeMode="contain" style={{width:50,height:50,}}/>
-                                    </View>
-                                    <Text style={{fontSize:8,fontWeight:'300',color:'#000'}}>Grain & Rice</Text>
-                                </View>
-                                <View style={{alignItems:'center'}}>
-                                    <View style={{width:90,backgroundColor:'white',alignItems:'center',marginBottom:5}}>
-                                      <Image source={require('../assets/dream1.jpg')} resizeMode="contain" style={{width:50,height:50}}/>
-                                    </View>
-                                    <Text style={{fontSize:8,fontWeight:'300',color:'#000'}}>Paste</Text>
-                                </View>
-                                <View style={{alignItems:'center'}}>
-                                    <View style={{width:90,backgroundColor:'white',alignItems:'center',marginBottom:5}}>
-                                      <Image source={require('../assets/dream2.jpg')} resizeMode="contain" style={{width:50,height:50}}/>
-                                    </View>
-                                    <Text style={{fontSize:8,fontWeight:'300',color:'#000'}}>Noodles</Text>
-                                </View>
-                              </View>
-
-
-                              <View style={{flexDirection:'row',justifyContent:'space-between',marginBottom:20}}>
-                                <View style={{alignItems:'center'}}>
-                                    <View style={{width:90,backgroundColor:'white',alignItems:'center',marginBottom:5}}>
-                                      <Image source={require('../assets/dream.jpg')} resizeMode="contain" style={{width:50,height:50,}}/>
-                                    </View>
-                                    <Text style={{fontSize:8,fontWeight:'300',color:'#000'}}>Grain & Rice</Text>
-                                </View>
-                                <View style={{alignItems:'center'}}>
-                                    <View style={{width:90,backgroundColor:'white',alignItems:'center',marginBottom:5}}>
-                                      <Image source={require('../assets/dream1.jpg')} resizeMode="contain" style={{width:50,height:50}}/>
-                                    </View>
-                                    <Text style={{fontSize:8,fontWeight:'300',color:'#000'}}>Paste</Text>
-                                </View>
-                                <View style={{alignItems:'center'}}>
-                                    <View style={{width:90,backgroundColor:'white',alignItems:'center',marginBottom:5}}>
-                                      <Image source={require('../assets/dream2.jpg')} resizeMode="contain" style={{width:50,height:50}}/>
-                                    </View>
-                                    <Text style={{fontSize:8,fontWeight:'300',color:'#000'}}>Noodles</Text>
-                                </View>
-                              </View>
-
-                          </View>
-
-                          <View style={[styles.container6,styles.container8]}>
-                             <Text style={styles.container4}>BEER WINE & SPIRIT</Text>
-                             <Text style={styles.container5}>SEE ALL</Text>
-                          </View>  
-
-                          <View style={[styles.container6,styles.container8]}>
-                             <Text style={styles.container4}>BEER WINE & SPIRIT</Text>
-                             <Text style={styles.container5}>SEE ALL</Text>
-                          </View> 
+                        </ScrollView>
 
                       </View>
                    </View>
                
            </SafeAreaView>
-        </View>
+   
     )
 }
 
@@ -177,15 +177,14 @@ const styles = StyleSheet.create({
     container1:{
         paddingVertical:18,
         paddingHorizontal:5,
-        fontSize:9,
-        color:'#000',
-        textAlign:'center',
-        fontWeight:'300'
+       
+       
     },
 
    container2:{
        backgroundColor:'white',
        flex:1,
+     
 
    },
    container3:{
@@ -196,40 +195,13 @@ const styles = StyleSheet.create({
     paddingRight:3,
     paddingTop:7
 },
-container4:{
-    fontSize:10,
+yam:{
+    fontSize:9,
     color:'#000',
-
-},
-container5:{
-   color:'red',
-   fontSize:8,
-
-},
-container6:{
-   width:'100%',
-  
-   paddingHorizontal:8, 
-   flexDirection:'row',
-   justifyContent:'space-between',
-   backgroundColor:'white',
-   alignItems:'center'
-},
-
-container7:{
-    marginBottom:8,
-    borderRadius:4,
-    paddingVertical:14,
-},
-container8:{
-    paddingVertical:8,
-    borderTopLeftRadius:4,
-    borderTopRightRadius:4
-},
-container9:{
-    backgroundColor:'white',
-
+    textAlign:'center',
+    fontWeight:'300'
 }
+
 })
 
 export default secondBottomPage;
