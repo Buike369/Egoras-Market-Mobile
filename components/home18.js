@@ -14,7 +14,7 @@ const Section24 =()=>{
         <View style={styles.container7}>
             <View style={styles.container8}>
                 <Text style={{fontSize:10,letterSpacing:0.8,fontWeight:'500',marginBottom:8}}>Fashionable hot sale</Text>
-                <Image source={require('../assets/logo5.jpg')}  resizeMode='contain' style={{width:'100%',height:150,marginBottom:10,borderRadius:5}}/>
+                <Image source={require('../assets/logo5.jpg')}  resizeMode='cover' style={{width:'100%',height:150,marginBottom:10,borderRadius:5}}/>
                 <Text style={{fontSize:10,letterSpacing:0.5,fontWeight:'300',marginBottom:20}}>Fashionwholesale hot sale</Text>
                 <View style={styles.container9}>
                     <Text style={{fontSize:9,letterSpacing:0.5,color:'grey'}}>116 minutes ago</Text>

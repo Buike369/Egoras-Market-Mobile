@@ -1,7 +1,7 @@
 import React from 'react';
-import {View,Text,FlatList,Image,Animated,Dimensions,StyleSheet,TouchableOpacity,TextInput,SafeAreaView, ScrollView, ImageBackground, VirtualizedList} from 'react-native';
+import {View,Text,FlatList,Image,Animated,Dimensions,StyleSheet,TouchableOpacity,TextInput,SafeAreaView, ScrollView, ImageBackground, VirtualizedList, Pressable} from 'react-native';
 import {Ionicons } from 'react-native-vector-icons';
-import Search from './home7';
+// import Search from './home7';
 
 
 
@@ -112,9 +112,11 @@ const Item = ({img4})=>(
 </View>
 )
 
-const carl =()=>{
+const carl =({navigation})=>{
 
-
+      const farway1 = ()=>{
+          navigation.navigate('City')
+      }
    
         const renderItem = ({ item }) => (
           <Item img4={item.img1} />
@@ -130,15 +132,20 @@ const carl =()=>{
         <SafeAreaView style={styles.container}>
         <View > 
             <SafeAreaView >
-           {/* <View style={styles.container1}>
+
+                
+           <View style={styles.container1}>
                 <View style={{paddingHorizontal:10,flexDirection:'row',alignItems:'center'}}>
                    <Ionicons name="md-search" size={20} color="#808080" style={styles.container2} />
                    <TextInput placeholder='search on Egoroas Market' style={{width:340,paddingVertical:15,paddingLeft:30,borderRadius:8,backgroundColor:'white'}}/>
                    <Ionicons name="cart-outline" size={30} color="#fff" style={{marginLeft:5}} />
                 </View>
-           </View> */}
-           <Search/>
+           </View>
+        
+           {/* <Search/> */}
      <ScrollView>
+
+         <Pressable onPress={farway1}>
              <FlatList  data={data}
              horizontal
              pagingEnabled
@@ -150,6 +157,7 @@ const carl =()=>{
                    </View>
                }}
              />
+             </Pressable>
 
              <View style={{paddingHorizontal:10,marginBottom:5}}>
                  <View style={styles.container4}>
@@ -1103,7 +1111,8 @@ const carl =()=>{
 const styles = StyleSheet.create({
  container:{
      flex:1,
-     alignItems:'center',
+    //  alignItems:'center',
+    // paddingHorizontal:1
      
  },
  container1:{
@@ -1120,6 +1129,10 @@ const styles = StyleSheet.create({
    left:17,
    zIndex:3
  },
+
+
+
+
  container3:{
      width:40,
      height:40,
