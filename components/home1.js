@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text,FlatList,Image,Animated,Dimensions,StyleSheet,TouchableOpacity,TextInput,SafeAreaView, ScrollView, ImageBackground, VirtualizedList, Pressable} from 'react-native';
+import {View,Text,FlatList,Image,Animated,Dimensions,StyleSheet,TouchableOpacity,TextInput,SafeAreaView, ScrollView, ImageBackground, VirtualizedList, Pressable,Platform} from 'react-native';
 import {Ionicons } from 'react-native-vector-icons';
 // import Search from './home7';
 
@@ -105,7 +105,7 @@ const Item = ({img4})=>(
     <Image  source={img4} style={{width:110,height:110,marginBottom:15}} resizeMode="contain"/>
     <Text style={{fontSize:10,marginBottom:8}}>Cherry Blossom & jojoba..</Text>
     <Text style={{fontSize:12,marginBottom:10}}>₦3,750</Text>
-    <Text style={{fontSize:7,marginBottom:4}}>89 items left</Text>
+    <Text style={{fontSize:8,marginBottom:4,letterSpacing:0.1}}>89 items left</Text>
     <View style={styles.container24}>
         <View style={styles.container25}></View>
     </View>
@@ -117,9 +117,16 @@ const carl =({navigation})=>{
       const farway1 = ()=>{
           navigation.navigate('City')
       }
+
+
+      const farway2 =()=>{
+          navigation.navigate('City1')
+      }
    
         const renderItem = ({ item }) => (
+          <Pressable onPress={ farway2}>
           <Item img4={item.img1} />
+          </Pressable>  
         );
 
 
@@ -135,9 +142,9 @@ const carl =({navigation})=>{
 
                 
            <View style={styles.container1}>
-                <View style={{paddingHorizontal:10,flexDirection:'row',alignItems:'center'}}>
+                <View style={{flexDirection:'row',alignItems:'center'}}>
                    <Ionicons name="md-search" size={20} color="#808080" style={styles.container2} />
-                   <TextInput placeholder='search on Egoroas Market' style={{width:340,paddingVertical:15,paddingLeft:30,borderRadius:8,backgroundColor:'white'}}/>
+                   <TextInput placeholder='search on Egoroas Market' style={{width:'90%',paddingVertical:15,paddingLeft:30,borderRadius:8,backgroundColor:'white'}}/>
                    <Ionicons name="cart-outline" size={30} color="#fff" style={{marginLeft:5}} />
                 </View>
            </View>
@@ -145,19 +152,21 @@ const carl =({navigation})=>{
            {/* <Search/> */}
      <ScrollView>
 
-         <Pressable onPress={farway1}>
+        
              <FlatList  data={data}
              horizontal
              pagingEnabled
                keyExtractor={(_,index)=>index.toString()}
                renderItem={({item})=>{
-                   return <View style={{width,alignItems:'center'}}>
+                   return  <Pressable onPress={farway1}>
+                   <View style={{width,alignItems:'center'}}>
                        <Image source={item} style={{width:'100%',height:imageH,resizeMode:'contain',alignItems:'center'}}/>
                      
                    </View>
+                   </Pressable>
                }}
              />
-             </Pressable>
+            
 
              <View style={{paddingHorizontal:10,marginBottom:5}}>
                  <View style={styles.container4}>
@@ -205,10 +214,10 @@ const carl =({navigation})=>{
 
            <View  style={styles.container5}>
                <View>
-                   <Text style={{fontSize:12,color:'white'}}>Flash Sale</Text>
+                   <Text style={{fontSize:12,color:'white',fontWeight:'500'}}>Flash Sale</Text>
                    <Text style={{fontSize:10,color:'white'}}>TIME LEFT</Text> 
                </View>
-                   <Text style={{fontSize:10,color:'white',fontWeight:'500'}}>SEE ALL</Text>
+                   <Text style={{fontSize:10,color:'white',fontWeight:'600'}}>SEE ALL</Text>
            </View>
 
              
@@ -224,23 +233,27 @@ const carl =({navigation})=>{
    </View>
 
 
-           <View style={styles.container6}>
+           <View style={[styles.container6,styles.container26]}>
            {/* <View style={{width:200,height:180}}><Image source={require('../assets/sec.png')} resizeMode={['center']} style={{ flex:1,width:'100%',height:'100%', }}/></View> */}
-            <Image source={require('../assets/sec1.jpg')}resizeMode={'cover'} style={{height:95,flex:1,width:'100%'}}/>
-            <Image source={require('../assets/sec.png')} resizeMode="cover" style={{height:95,flex:1,width:'100%'}}/>
+           <View style={{flex:1}}>
+               <Image source={require('../assets/sec1.jpg')}resizeMode={'contain'} style={{height:90,width:'100%'}}/>
+            </View>
+            <View style={{flex:1}}>
+               <Image source={require('../assets/sec.png')} resizeMode="contain" style={{height:90,width:'100%'}}/>
+            </View>
            </View>
            <View style={styles.container6}>
            {/* <View style={{width:200,height:180}}><Image source={require('../assets/sec.png')} resizeMode={['center']} style={{ flex:1,width:'100%',height:'100%', }}/></View> */}
-            <Image source={require('../assets/sec2.jpg')}resizeMode="cover" style={{width:'100%',height:100,flex:1}}/>
-            <Image source={require('../assets/sec3.jpg')} resizeMode="cover" style={{width:'100%',height:100,flex:1}}/>
+            <Image source={require('../assets/sec2.jpg')}resizeMode="contain" style={{width:'100%',height:100,flex:1,marginTop:-10}}/>
+            <Image source={require('../assets/sec3.jpg')} resizeMode="contain" style={{width:'100%',height:100,flex:1,marginTop:-10}}/>
            </View>
 
            <View  style={[styles.container5,styles.container15]}>
                <View>
-                   <Text style={{fontSize:12,color:'white'}}>UNILEVER BRAND DAY</Text>
-                   <Text style={{fontSize:10,color:'white'}}>Extra 10% off at checkout</Text> 
+                   <Text style={{fontSize:12,color:'#fff',fontWeight:'500'}}>UNILEVER BRAND DAY</Text>
+                   <Text style={{fontSize:10,color:'#fff',letterSpacing:0.1}}>Extra 10% off at checkout</Text> 
                </View>
-                   <Text style={{fontSize:10,color:'white',fontWeight:'500'}}>SEE ALL</Text>
+                   <Text style={{fontSize:10,color:'#fff',fontWeight:'600'}}>SEE ALL</Text>
            </View>
 
 
@@ -249,26 +262,26 @@ const carl =({navigation})=>{
            {/* <View style={{width:200,height:180}}><Image source={require('../assets/sec.png')} resizeMode={['center']} style={{ flex:1,width:'100%',height:'100%', }}/></View> */}
             <View style={styles.container7}>
                 <Image source={require('../assets/ca.jpg')} style={{width:100,height:100,marginBottom:20}} resizeMode='contain'/>
-                <Text style={{fontSize:9,textAlign:'center',marginBottom:5,fontWeight:'300'}}>Triple Protection Toothpaste Cavity Fighter 140g</Text>
-                <Text style={{fontSize:12,fontWeight:'600'}}>₦250</Text>
+                <Text style={{fontSize:10,textAlign:'center',marginBottom:5,fontWeight:'300',color:'#000',letterSpacing:0.1}}>Triple Protection Toothpaste Cavity Fighter 140g</Text>
+                <Text style={{fontSize:12,fontWeight:Platform.OS === 'ios'? '600' : '800'}}>₦250</Text>
             </View>
             <View style={styles.container8}>
             <Image source={require('../assets/ca1.jpg')} style={{width:100,height:100,marginBottom:20}} resizeMode='contain'/>
-            <Text style={{fontSize:9,textAlign:'center',marginBottom:5,fontWeight:'300'}}>Multi-Purpose Washing Liquid Lemon 1l</Text>
-            <Text style={{fontSize:12,fontWeight:'600'}}>₦380</Text>
+            <Text style={{fontSize:10,textAlign:'center',marginBottom:5,fontWeight:'300',color:'#000',letterSpacing:0.1}}>Multi-Purpose Washing Liquid Lemon 1l</Text>
+            <Text style={{fontSize:12,fontWeight:Platform.OS === 'ios'? '600' : '800'}}>₦380</Text>
             </View>
            </View>
            <View style={styles.container6}>
            {/* <View style={{width:200,height:180}}><Image source={require('../assets/sec.png')} resizeMode={['center']} style={{ flex:1,width:'100%',height:'100%', }}/></View> */}
             <View  style={styles.container9}>
             <Image source={require('../assets/ca2.jpg')} style={{width:100,height:100,marginBottom:20}} resizeMode='contain'/>
-            <Text style={{fontSize:9,textAlign:'center',marginBottom:5,fontWeight:'300'}}>@in1 Tropical Sensations Handwash Washing Pow...</Text>
-            <Text style={{fontSize:12,fontWeight:'600'}}>₦555</Text>
+            <Text style={{fontSize:10,textAlign:'center',marginBottom:5,fontWeight:'300',color:'#000',letterSpacing:0.1}}>@in1 Tropical Sensations Handwash Washing Pow...</Text>
+            <Text style={{fontSize:12,fontWeight:Platform.OS === 'ios'? '600' : '800'}}>₦555</Text>
             </View>
             <View style={styles.container10}>
             <Image source={require('../assets/ca3.jpg')} style={{width:100,height:100,marginBottom:20}} resizeMode='contain'/>
-            <Text style={{fontSize:9,textAlign:'center',marginBottom:5,fontWeight:'300'}}>Protect Handwashing Detergent Powder - 900g</Text>
-            <Text style={{fontSize:12,fontWeight:'600'}}>₦499</Text>
+            <Text style={{fontSize:10,textAlign:'center',marginBottom:5,fontWeight:'300',color:'#000',letterSpacing:0.1}}>Protect Handwashing Detergent Powder - 900g</Text>
+            <Text style={{fontSize:12,fontWeight:Platform.OS === 'ios'? '600' : '800'}}>₦499</Text>
             </View>
            </View>
           </View>
@@ -327,8 +340,8 @@ const carl =({navigation})=>{
            </View>
            <View style={styles.container6}>
            {/* <View style={{width:200,height:180}}><Image source={require('../assets/sec.png')} resizeMode={['center']} style={{ flex:1,width:'100%',height:'100%', }}/></View> */}
-            <Image source={require('../assets/me2.gif')}resizeMode="contain" style={{width:'50%',height:100}}/>
-            <Image source={require('../assets/me3.gif')} resizeMode="contain" style={{width:'50%',height:100}}/>
+            <Image source={require('../assets/me2.gif')}resizeMode="contain" style={{width:'50%',height:100,marginTop:-10}}/>
+            <Image source={require('../assets/me3.gif')} resizeMode="contain" style={{width:'50%',height:100,marginTop:-10}}/>
            </View>
 
            <Text style={[styles.container14,styles.container15]}>SHOP FROM OUR BLACK FRIDAY COLLECTIONS!</Text>  
@@ -418,14 +431,14 @@ const carl =({navigation})=>{
            {/* <View style={{width:200,height:180}}><Image source={require('../assets/sec.png')} resizeMode={['center']} style={{ flex:1,width:'100%',height:'100%', }}/></View> */}
             <View style={styles.container7}>
                 <Image source={require('../assets/shoe.jpg')} style={{width:100,height:100,marginBottom:20,borderRadius:2}} resizeMode='contain'/>
-                <Text style={{fontSize:9,textAlign:'center',marginBottom:5,fontWeight:'300'}}>Men's Business Dress Casual ...</Text>
-                <Text style={{fontSize:12,fontWeight:'600'}}>₦250</Text>
+                <Text style={{fontSize:10,textAlign:'center',marginBottom:5,fontWeight:'300',color:'#000'}}>Men's Business Dress Casual ...</Text>
+                <Text style={{fontSize:12,fontWeight:'600',color:'#000',letterSpacing:0.1}}>₦250</Text>
                 <Text style={{position:'absolute',color:'red',paddingVertical:7,paddingHorizontal:5,top:8,right:15,backgroundColor:'#cfefe2',fontSize:10,}}>-50%</Text>
             </View>
             <View style={styles.container8}>
             <Image source={require('../assets/shoe1.jpg')} style={{width:100,height:100,marginBottom:20,borderRadius:2}} resizeMode='contain'/>
-            <Text style={{fontSize:9,textAlign:'center',marginBottom:5,fontWeight:'300'}}>Men's Cotton Casual Short sl...</Text>
-            <Text style={{fontSize:12,fontWeight:'600'}}>₦380</Text>
+            <Text style={{fontSize:10,textAlign:'center',marginBottom:5,fontWeight:'300',color:'#000'}}>Men's Cotton Casual Short sl...</Text>
+            <Text style={{fontSize:12,fontWeight:'600',color:'#000',letterSpacing:0.1}}>₦380</Text>
             <Text style={{position:'absolute',color:'red',paddingVertical:7,paddingHorizontal:5,top:8,right:15,backgroundColor:'#cfefe2',fontSize:10}}>-30%</Text>
             </View>
            </View>
@@ -433,14 +446,14 @@ const carl =({navigation})=>{
            {/* <View style={{width:200,height:180}}><Image source={require('../assets/sec.png')} resizeMode={['center']} style={{ flex:1,width:'100%',height:'100%', }}/></View> */}
             <View  style={styles.container9}>
             <Image source={require('../assets/shoe2.jpg')} style={{width:100,height:100,marginBottom:20,borderRadius:2}} resizeMode='contain'/>
-            <Text style={{fontSize:9,textAlign:'center',marginBottom:5,fontWeight:'300'}}>@in1 Tropical Sensations Handwash Washing Pow...</Text>
-            <Text style={{fontSize:12,fontWeight:'600'}}>₦555</Text>
+            <Text style={{fontSize:10,textAlign:'center',marginBottom:5,fontWeight:'300',color:'#000'}}>@in1 Tropical Sensations Handwash Washing Pow...</Text>
+            <Text style={{fontSize:12,fontWeight:'600',color:'#000',letterSpacing:0.1}}>₦555</Text>
             <Text style={{position:'absolute',color:'red',paddingVertical:7,paddingHorizontal:5,top:8,right:15,backgroundColor:'#cfefe2',fontSize:10}}>-20%</Text>
             </View>
             <View style={styles.container10}>
             <Image source={require('../assets/shoe3.jpg')} style={{width:100,height:100,marginBottom:20,borderRadius:2}} resizeMode='contain'/>
-            <Text style={{fontSize:9,textAlign:'center',marginBottom:5,fontWeight:'300'}}>Unisex Anti Blue Light Protection</Text>
-            <Text style={{fontSize:12,fontWeight:'600'}}>₦499</Text>
+            <Text style={{fontSize:10,textAlign:'center',marginBottom:5,fontWeight:'300',color:'#000'}}>Unisex Anti Blue Light Protection</Text>
+            <Text style={{fontSize:12,fontWeight:'600',color:'#000',letterSpacing:0.1}}>₦499</Text>
             <Text style={{position:'absolute',color:'red',paddingVertical:7,paddingHorizontal:5,top:8,right:15,backgroundColor:'#cfefe2',fontSize:10}}>-50%</Text>
             </View>
            </View>
@@ -450,11 +463,11 @@ const carl =({navigation})=>{
 
       <View style={styles.container6}>
            {/* <View style={{width:200,height:180}}><Image source={require('../assets/sec.png')} resizeMode={['center']} style={{ flex:1,width:'100%',height:'100%', }}/></View> */}
-            <Image source={require('../assets/tit.gif')}resizeMode="contain" style={{width:200,height:95}}/>
-            <Image source={require('../assets/tit1.gif')} resizeMode="contain" style={{width:200,height:95}}/>
+            <Image source={require('../assets/tit.gif')}resizeMode="contain" style={{width:'50%',height:95}}/>
+            <Image source={require('../assets/tit1.gif')} resizeMode="contain" style={{width:'50%',height:95}}/>
            </View>
           
-           <Text style={[styles.container14,styles.container17]}>EXCLUSIVE DEALS</Text> 
+           <Text style={[styles.container14,styles.cup]}>EXCLUSIVE DEALS</Text> 
 
 
            <View style={{alignItems:'center',marginTop:4}}>
@@ -1117,16 +1130,18 @@ const styles = StyleSheet.create({
  },
  container1:{
      width:'100%',
-     maxWidth:800,
+    //  maxWidth:800,
      alignItems:'center',
    backgroundColor:'#28b67d',
-     paddingVertical:5
+     paddingVertical:5,
+     paddingHorizontal:10,
+     marginBottom:3
 
  },
  container2:{
      position:'absolute',
-   top:14,
-   left:17,
+   top:'35%',
+   left:10,
    zIndex:3
  },
 
@@ -1161,7 +1176,8 @@ const styles = StyleSheet.create({
  },
  container6:{
    flexDirection:'row',
-   alignItems:'center'
+   alignItems:'center',
+//    width:'100%'
    
  },
 
@@ -1222,7 +1238,8 @@ container11:{
     fontSize:10,
     fontWeight:'400',
     backgroundColor:'#cfefe2',
-    color:'#000'
+    color:'#000',
+    letterSpacing:0.1
 },
 container12:{
    flexDirection:'row',
@@ -1244,9 +1261,9 @@ container14:{
     paddingLeft:10,
     paddingVertical:15,
     fontSize:10,
-    fontWeight:'400',
+    fontWeight:'500',
     backgroundColor:'#28b67d',
-    color:'white'
+    color:'#fff'
 },
 container15:{
     marginTop:-2.5},
@@ -1262,6 +1279,10 @@ container15:{
     },
     container17:{
         marginTop:-3.1},
+
+        cup:{
+            marginTop:-4.5},
+        
 container18:{
     backgroundColor:'white'
 },
@@ -1307,7 +1328,11 @@ container25:{
     position:'absolute',
     top:0,left:0,right:0, bottom:0,
     backgroundColor:'green',width:"30%",borderTopLeftRadius:10,borderBottomLeftRadius:10
+},
+container26:{
+    width:'100%'
 }
+
 
 })
 
