@@ -122,20 +122,97 @@ const detailScreen =({navigation})=>{
 
 
               <View style={[styles.container1,styles.container3]}>
-                  <View style={{marginBottom:20,flexDirection:'row',alignItems:'center'}}>
-                      <View style={{width:20,height:20,borderRadius:100,backgroundColor:'#28b67d',alignItems:'center',justifyContent:'center'}}><Ionicons name="star-sharp" size={15} color="#fff" /></View>
-                     <Text style={{color:'#000',fontWeight:'400',letterSpacing:0.1,marginLeft:5,fontSize:12,paddingRight:9}}>Enjoy cheaper shipping fees when you select a PickUp Station at checkout</Text>
+                  <View style={{marginBottom:20,flexDirection:'row',alignItems:'center',}}>
+                      <View style={{width:'8%'}}>
+                      <View style={{width:20,height:20,borderRadius:100,backgroundColor:'#28b67d',alignItems:'center',justifyContent:'center'}}><Ionicons name="star-sharp" size={15} color="#fff" /></View></View>
+                    <View style={{width:'92%'}}><Text style={{color:'#000',fontWeight:'400',letterSpacing:0.1,marginLeft:5,fontSize:12,}}>Enjoy cheaper shipping fees when you select a PickUp Station at checkout</Text></View>
                   </View>
                   <View style={{marginBottom:20,flexDirection:'row',alignItems:'center'}}>
-                  <View style={{width:20,height:20,borderRadius:100,backgroundColor:'#28b67d',alignItems:'center',justifyContent:'center'}}><Ionicons name="star-sharp" size={15} color="#fff" /></View>
-                     <Text style={{color:'#000',fontWeight:'400',letterSpacing:0.1,marginLeft:5,fontSize:12}}>Get addditional 20% off with your Mastercard</Text>
+                  <View style={{width:'8%'}}>   
+                  <View style={{width:20,height:20,borderRadius:100,backgroundColor:'#28b67d',alignItems:'center',justifyContent:'center'}}><Ionicons name="star-sharp" size={15} color="#fff" /></View></View>
+                    <View style={{width:'92%'}}><Text style={{color:'#000',fontWeight:'400',letterSpacing:0.1,marginLeft:5,fontSize:12}}>Get addditional 20% off with your Mastercard</Text></View>
                   </View>
                   <View style={{marginBottom:20,flexDirection:'row',alignItems:'center'}}>
-                  <View style={{width:20,height:20,borderRadius:100,backgroundColor:'#28b67d',alignItems:'center',justifyContent:'center'}}><Ionicons name="star-sharp" size={15} color="#fff" /></View>
-                     <Text style={{color:'#000',fontWeight:'400',letterSpacing:0.1,marginLeft:5,fontSize:12,paddingRight:9}}>Borrow loans up to 100,000 to make everyday life easier.no colllateral,no papperwork via jumiaPay financial partners.</Text>
+                  <View style={{width:'8%'}}>  
+                  <View style={{width:20,height:20,borderRadius:100,backgroundColor:'#28b67d',alignItems:'center',justifyContent:'center'}}><Ionicons name="star-sharp" size={15} color="#fff" /></View></View>
+                    <View style={{width:'92%'}}><Text style={{color:'#000',fontWeight:'400',letterSpacing:0.1,marginLeft:5,fontSize:12,}}>Borrow loans up to 100,000 to make everyday life easier.no colllateral,no papperwork via jumiaPay financial partners.</Text></View>
                   </View>
                  
               </View>
+
+              <Text style={{fontSize:11,paddingTop:15,paddingBottom:10,paddingLeft:10,color:'gray',letterSpacing:0.1}}>DELIVERY AND RETURNS INFO</Text>
+
+
+              <View style={[styles.container1,styles.container3]}>
+              <View style={{flexDirection:'row',alignItems:'center'}}>
+                   <Text style={{fontSize:13}}>EGORAS_M</Text>
+                   <Ionicons name="paper-plane-sharp" size={12} color="#28b67d" style={{marginLeft:4}}/>
+                   <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
+               </View>
+               
+                  <Text style={{fontSize:12,letterSpacing:0.1,fontWeight:'400',marginTop:10,marginBottom:7}}>Eligble for Free Shipping</Text>
+                  <View style={{borderWidth:0.6,width:"100%",borderColor:'#f5f3f3',marginBottom:10}}></View>
+                  <Text style={{fontSize:14,fontWeight:'400',letterSpacing:0.1,color:'#000',marginBottom:10}}>Choose Location</Text>
+                  <View style={{paddingHorizontal:11,paddingVertical:15,borderColor:"gray",borderWidth:0.5,borderRadius:5,flexDirection:'row',justifyContent:'space-between',alignItems:'center',marginBottom:10}}>
+                      <Text style={{fontSize:12,fontWeight:'400',color:'#000'}}>Lagos</Text>
+                      <Ionicons name="ios-caret-down-sharp" size={12} color="#000" /> 
+                  </View>
+                  <View style={{paddingHorizontal:11,paddingVertical:15,borderColor:"gray",borderWidth:0.5,borderRadius:5,flexDirection:'row',justifyContent:'space-between',alignItems:'center',marginBottom:10}}>
+                      <Text style={{fontSize:12,fontWeight:'400',color:'#000'}}>LEKKI_AJAH(SANGOTEDO)</Text>
+                      <Ionicons name="ios-caret-down-sharp" size={12} color="#000" /> 
+                  </View>
+
+                  <View style={{flexDirection:'row',justifyContent:'space-between',marginBottom:10}}>
+                      <View style={{width:'80%'}}>
+                          <View style={{flexDirection:'row'}}>
+                              <View style={styles.container11}><Ionicons name="bus" size={12} color="#28b67d" /></View>
+                              <View style={{marginLeft:6}}>
+                                 <Text>Door Delivery</Text>
+                                 <Text style={{fontSize:12}}>Shipping  ₦430</Text>
+                                   <Text  style={{fontSize:12}}>Delivery by 7Dec when you order within next 20hr  52mins </Text>
+                               </View>
+                            </View>
+                      </View>
+                      <View style={{width:'20%'}}><Text style={{fontSize:12,textAlign:'right'}}>Details</Text></View>
+                  </View>
+
+                  <View style={{flexDirection:'row',justifyContent:'space-between',marginBottom:10}}>
+                      <View style={{width:'80%'}}>
+                          <View style={{flexDirection:'row'}}>
+                              <View style={styles.container11}><Ionicons name="bus" size={12} color="#28b67d" /></View>
+                              <View style={{marginLeft:6}}>
+                                 <Text>Pickup Station</Text>
+                                 <Text style={{fontSize:12}}>Shipping  ₦450</Text>
+                                   <Text  style={{fontSize:12}}>Delivery by 7Dec when you order within next 20hr  52mins </Text>
+                               </View>
+                            </View>
+                      </View>
+                      <View style={{width:'20%'}}><Text style={{fontSize:12,textAlign:'right'}}>Details</Text></View>
+                  </View>
+
+                  <View style={{flexDirection:'row',justifyContent:'space-between',marginBottom:10}}>
+                      <View style={{width:'80%'}}>
+                          <View style={{flexDirection:'row'}}>
+                              <View style={styles.container11}><Ionicons name="bus" size={12} color="#28b67d" /></View>
+                              <View style={{marginLeft:6}}>
+                                 <Text>Return Policy</Text>
+                                 <Text style={{fontSize:12}}>Free return within 15 days for Official store items and 7 days for other eligble items</Text> 
+                               </View>
+                            </View>
+                      </View>
+                      <View style={{width:'20%'}}><Text style={{fontSize:12,textAlign:'right'}}>Details</Text></View>
+                  </View>
+
+              </View>
+
+             <View style={{paddingLeft:10,paddingTop:15,paddingBottom:10}}><Text style={{fontSize:12}}>PRODUCT DETAILS</Text></View>
+
+             <View style={{flexDirection:'row',
+            alignItems:'center',justifyContent:'space-between',paddingHorizontal:10,paddingVertical:10,backgroundColor:'#fff'}}>
+                 <Text style={{fontSize:12}}>Description</Text>
+                 <Ionicons name="ios-chevron-forward-sharp" size={12} color="#000" /> 
+             </View>
+             
 
            </ScrollView>
 
@@ -196,6 +273,15 @@ borderTopLeftRadius:10
 },
 container10:{
     height:260,
+},
+container11:{
+    padding:10,borderRadius:3,backgroundColor:'#fff',
+    shadowColor:'grey',
+         shadowOffset:{width:0,height:2},
+         shadowRadius:8,
+         elevation:1,
+         shadowOpacity:0.8,
+         alignSelf:'flex-start'
 }
 
 })
