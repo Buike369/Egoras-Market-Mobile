@@ -7,6 +7,8 @@ import Fold1 from './home8';
 import Fold2 from './home4';
 import Fold3 from './home5';
 import Fold4 from './home6';
+import Fold5 from './home25';
+
 
 
 
@@ -22,7 +24,7 @@ export default function book(){
         <Tab.Screen name="Home11" component={Fold1} options={{headerShown:false,tabBarLabel:'Categories',tabBarLabelStyle:{color:'#28b67d',fontSize:12},tabBarIcon: () => (
             <Ionicons name="ios-list-circle-outline" color='#28b67d' size={25} />
           ),}}/>
-        <Tab.Screen name="Home12" component={Fold2} options={{headerShown:false,tabBarLabel:'Feed',tabBarLabelStyle:{color:'#28b67d',fontSize:12 },tabBarIcon: () => (
+        <Tab.Screen name="Home12" component={Fold5} options={{headerShown:false,tabBarLabel:'Feed',tabBarLabelStyle:{color:'#28b67d',fontSize:12 },tabBarIcon: () => (
             <Ionicons name="md-reader-outline" color='#28b67d' size={22} />
           ),}}/>
         <Tab.Screen name="Home13" component={Fold3} options={{headerShown:false,tabBarLabel:'Account',tabBarLabelStyle:{color:'#28b67d',fontSize:12},tabBarIcon: () => (

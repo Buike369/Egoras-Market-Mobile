@@ -1,18 +1,53 @@
 import React,{useState,useEffect} from 'react';
-import {View,Text,StyleSheet, SafeAreaView,Pressable, ScrollView} from 'react-native';
+import {View,Text,StyleSheet, SafeAreaView,Pressable, ScrollView,Image,FlatList, DevSettings,Button} from 'react-native';
 import {Ionicons } from 'react-native-vector-icons';
 import {Feather } from 'react-native-vector-icons';
+import {MaterialCommunityIcons } from 'react-native-vector-icons';
 
 
 const detailScreen =({navigation})=>{
 
+
+    const ere=(<Text style={{fontSize:12,fontWeight:'500'}}>Execellent</Text>);
+
+    const txt1=(<Text style={{fontSize:11,fontWeight:'500'}}>100%</Text>);
+    const txt2=(<Text style={{fontSize:11,fontWeight:'500'}}>951</Text>);
+
     const Sami =()=>{
         navigation.goBack()
     }
-
-
+     const write =(
+         <Text style={{color:'#000',fontWeight:'500',letterSpacing:0.1}}>Free Shipping</Text>
+     )
 
     const [countDown,setCountDown]=useState("");
+
+    const does =[{id:2,img40:require('../assets/farn.jpg')},{id:4,img40:require('../assets/farn.jpg')},{id:6,img40:require('../assets/farn.jpg')},{id:8,img40:require('../assets/farn.jpg')},{id:10,img40:require('../assets/farn.jpg')},{id:12,img40:require('../assets/farn.jpg')},{id:14,img40:require('../assets/farn.jpg')},{id:16,img40:require('../assets/farn.jpg')},{id:18,img40:require('../assets/farn.jpg')},{id:20,img40:require('../assets/farn.jpg')},{id:22,img40:require('../assets/farn.jpg')},{id:24,img40:require('../assets/farn.jpg')},{id:26,img40:require('../assets/farn.jpg')},];
+
+
+    const does1 =[{id:2,img41:require('../assets/farn.jpg')},{id:4,img41:require('../assets/flash_deal9.jpg')},{id:6,img41:require('../assets/farn.jpg')},{id:8,img41:require('../assets/farn.jpg')},{id:10,img41:require('../assets/flash_deal.jpg')},{id:12,img41:require('../assets/flash_deal8.jpg')},{id:14,img41:require('../assets/flash_deal1.jpg')},{id:16,img41:require('../assets/flash_deal6.jpg')},{id:18,img41:require('../assets/flash_deal2.jpg')},{id:20,img41:require('../assets/farn.jpg')},{id:22,img41:require('../assets/flash_deal3.jpg')},{id:24,img41:require('../assets/flash_deal5.jpg')},{id:26,img41:require('../assets/flash_deal4.jpg')},]
+
+const DivScroll =({title})=>(
+    <View style={styles.container14}>
+                 <Image source={title} resizeMode="contain" style={{width:'100%',height:120,marginBottom:15}}/>
+                 <Text numberOfLines={1} style={{fontSize:12,fontWeight:'300',letterSpacing:0.1,textAlign:'left',marginBottom:5}}>UMIDIGI A9 Andriod 11fg ghiofrd  </Text>
+                 <Text style={{fontSize:11,fontWeight:'bold',letterSpacing:0.1}}>₦ 450</Text>
+                 <Text style={{fontSize:10,fontWeight:'300',color:'grey',letterSpacing:0.1,textDecorationLine:'line-through'}}>₦ 45,000</Text>
+             </View>)
+
+
+
+const DivScroll1 =({title})=>(
+    <View style={styles.container14}>
+                 <Image source={title} resizeMode="contain" style={{width:'100%',height:120,marginBottom:15}}/>
+                 <Text style={{fontSize:9,color:'red',backgroundColor:'#cfefe2',position:'absolute',top:7,right:10,padding:2}}>-49%</Text>
+                 <Text numberOfLines={1} style={{fontSize:12,fontWeight:'300',letterSpacing:0.1,textAlign:'left',marginBottom:5}}>UMIDIGI A9 Andriod 11fg ghiofrd  </Text>
+                 <Text style={{fontSize:11,fontWeight:'bold',letterSpacing:0.1}}>₦ 450</Text>
+                 <Text style={{fontSize:10,fontWeight:'300',color:'grey',letterSpacing:0.1,textDecorationLine:'line-through'}}>₦ 45,000</Text>
+             </View>)
+
+
+
 
     useEffect(()=>{
        let countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
@@ -45,6 +80,15 @@ const detailScreen =({navigation})=>{
 
     },[])
 
+
+    const wego=({item})=>(
+        <DivScroll title={item.img40}/>
+    )
+
+    const wego1=({item})=>(
+        <DivScroll1 title={item.img41}/>
+    )
+
     return(
         <SafeAreaView>
               <View style={styles.container}>
@@ -68,7 +112,7 @@ const detailScreen =({navigation})=>{
 
               <View style={[styles.container1,styles.container3]}>
                   <View style={[styles.container4,styles.container5]}><Text style={{fontSize:10,color:'#fff',fontWeight:'500',}}>Official Store</Text></View>
-                  <Text style={{fontWeight:'400',fontSize:12,marginBottom:5,letterSpacing:0.1,color:'#000'}}>LED Complete Insecticide (Device + Refill) - Pack Of 2</Text>
+                  <Text style={{fontWeight:'300',fontSize:12,marginBottom:5,letterSpacing:0.1,color:'#000'}}>LED Complete Insecticide (Device + Refill) - Pack Of 2</Text>
                   <Text style={{fontSize:10,letterSpacing:0.1,color:'#000',marginBottom:8}}>Brand: Mortein</Text>
                  <View style={[styles.container4,styles.container6]}><Text  style={{fontSize:10,color:'#fff'}}>JPrime Discount</Text></View>
                   <View style={{borderWidth:1,borderColor:'#28b67d',borderRadius:3}}>
@@ -95,8 +139,8 @@ const detailScreen =({navigation})=>{
                   </View>
 
                   <View style={{flexDirection:'row',alignItems:'center', marginBottom:25,marginTop:5}}>
-                      <Text style={{fontSize:10,}}>+shipping from 180 to LEKKI-AJAH(SANGOTEDO)</Text>
-                      <Text style={{fontSize:10,marginLeft:5}}>See options</Text>
+                      <Text style={{fontSize:11,fontWeight:'300'}}>+shipping from ₦ 180 to LEKKI-AJAH(SANGOTEDO)</Text>
+                      <Text style={{fontSize:10,marginLeft:5,color:'blue',fontWeight:'300'}}>See options</Text>
                   </View>
 
                   <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between'}}>
@@ -108,7 +152,7 @@ const detailScreen =({navigation})=>{
                              <Ionicons name="star-sharp" size={12} color="#e4a788" style={{marginLeft:4}}/>
                              <Ionicons name="star-half-sharp" size={12} color="#e4a788" style={{marginLeft:4}}/>
                            </View>
-                           <Text style={{fontSize:10,color:'gray'}}>(15 ratings)</Text>
+                           <Text style={{fontSize:10,color:'blue',fontWeight:'400'}}>(15 ratings)</Text>
                       </View>
                       <View style={{flexDirection:'row',alignItems:'center'}}>
                       <Feather name="share-2" size={14} color="#28b67d" style={{marginLeft:5}} />
@@ -125,17 +169,17 @@ const detailScreen =({navigation})=>{
                   <View style={{marginBottom:20,flexDirection:'row',alignItems:'center',}}>
                       <View style={{width:'8%'}}>
                       <View style={{width:20,height:20,borderRadius:100,backgroundColor:'#28b67d',alignItems:'center',justifyContent:'center'}}><Ionicons name="star-sharp" size={15} color="#fff" /></View></View>
-                    <View style={{width:'92%'}}><Text style={{color:'#000',fontWeight:'400',letterSpacing:0.1,marginLeft:5,fontSize:12,}}>Enjoy cheaper shipping fees when you select a PickUp Station at checkout</Text></View>
+                    <View style={{width:'92%'}}><Text style={{color:'#000',fontWeight:'300',letterSpacing:0.1,marginLeft:5,fontSize:12,}}>Enjoy cheaper shipping fees when you select a PickUp Station at checkout</Text></View>
                   </View>
                   <View style={{marginBottom:20,flexDirection:'row',alignItems:'center'}}>
                   <View style={{width:'8%'}}>   
                   <View style={{width:20,height:20,borderRadius:100,backgroundColor:'#28b67d',alignItems:'center',justifyContent:'center'}}><Ionicons name="star-sharp" size={15} color="#fff" /></View></View>
-                    <View style={{width:'92%'}}><Text style={{color:'#000',fontWeight:'400',letterSpacing:0.1,marginLeft:5,fontSize:12}}>Get addditional 20% off with your Mastercard</Text></View>
+                    <View style={{width:'92%'}}><Text style={{color:'#000',fontWeight:'300',letterSpacing:0.1,marginLeft:5,fontSize:12}}>Get addditional 20% off with your Mastercard</Text></View>
                   </View>
                   <View style={{marginBottom:20,flexDirection:'row',alignItems:'center'}}>
                   <View style={{width:'8%'}}>  
                   <View style={{width:20,height:20,borderRadius:100,backgroundColor:'#28b67d',alignItems:'center',justifyContent:'center'}}><Ionicons name="star-sharp" size={15} color="#fff" /></View></View>
-                    <View style={{width:'92%'}}><Text style={{color:'#000',fontWeight:'400',letterSpacing:0.1,marginLeft:5,fontSize:12,}}>Borrow loans up to 100,000 to make everyday life easier.no colllateral,no papperwork via jumiaPay financial partners.</Text></View>
+                    <View style={{width:'92%'}}><Text style={{color:'#000',fontWeight:'300',letterSpacing:0.1,marginLeft:5,fontSize:12,}}>Borrow loans up to 100,000 to make everyday life easier.no colllateral,no papperwork via jumiaPay financial partners.</Text></View>
                   </View>
                  
               </View>
@@ -150,14 +194,14 @@ const detailScreen =({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                
-                  <Text style={{fontSize:12,letterSpacing:0.1,fontWeight:'400',marginTop:10,marginBottom:7}}>Eligble for Free Shipping</Text>
+                  <Text style={{fontSize:12,letterSpacing:0.1,fontWeight:'300',marginTop:10,marginBottom:7}}>Eligble for {write}</Text>
                   <View style={{borderWidth:0.6,width:"100%",borderColor:'#f5f3f3',marginBottom:10}}></View>
                   <Text style={{fontSize:14,fontWeight:'400',letterSpacing:0.1,color:'#000',marginBottom:10}}>Choose Location</Text>
                   <View style={{paddingHorizontal:11,paddingVertical:15,borderColor:"gray",borderWidth:0.5,borderRadius:5,flexDirection:'row',justifyContent:'space-between',alignItems:'center',marginBottom:10}}>
                       <Text style={{fontSize:12,fontWeight:'400',color:'#000'}}>Lagos</Text>
                       <Ionicons name="ios-caret-down-sharp" size={12} color="#000" /> 
                   </View>
-                  <View style={{paddingHorizontal:11,paddingVertical:15,borderColor:"gray",borderWidth:0.5,borderRadius:5,flexDirection:'row',justifyContent:'space-between',alignItems:'center',marginBottom:10}}>
+                  <View style={{paddingHorizontal:11,paddingVertical:15,borderColor:"gray",borderWidth:0.5,borderRadius:5,flexDirection:'row',justifyContent:'space-between',alignItems:'center',marginBottom:20}}>
                       <Text style={{fontSize:12,fontWeight:'400',color:'#000'}}>LEKKI_AJAH(SANGOTEDO)</Text>
                       <Ionicons name="ios-caret-down-sharp" size={12} color="#000" /> 
                   </View>
@@ -167,13 +211,13 @@ const detailScreen =({navigation})=>{
                           <View style={{flexDirection:'row'}}>
                               <View style={styles.container11}><Ionicons name="bus" size={12} color="#28b67d" /></View>
                               <View style={{marginLeft:6}}>
-                                 <Text>Door Delivery</Text>
-                                 <Text style={{fontSize:12}}>Shipping  ₦430</Text>
-                                   <Text  style={{fontSize:12}}>Delivery by 7Dec when you order within next 20hr  52mins </Text>
+                                 <Text style={{color:'#000',fontSize:13,fontWeight:'500'}}>Door Delivery</Text>
+                                 <Text style={{fontSize:11,fontWeight:'400',}}>Shipping  ₦430</Text>
+                                   <Text  style={{fontSize:11,fontWeight:'400'}}>Delivery by 7Dec when you order within next 20hr  52mins </Text>
                                </View>
                             </View>
                       </View>
-                      <View style={{width:'20%'}}><Text style={{fontSize:12,textAlign:'right'}}>Details</Text></View>
+                      <View style={{width:'20%'}}><Text style={{fontSize:11,textAlign:'right',fontWeight:'300',color:'blue'}}>Details</Text></View>
                   </View>
 
                   <View style={{flexDirection:'row',justifyContent:'space-between',marginBottom:10}}>
@@ -181,38 +225,290 @@ const detailScreen =({navigation})=>{
                           <View style={{flexDirection:'row'}}>
                               <View style={styles.container11}><Ionicons name="bus" size={12} color="#28b67d" /></View>
                               <View style={{marginLeft:6}}>
-                                 <Text>Pickup Station</Text>
+                                 <Text style={{color:'#000',fontSize:13,fontWeight:'500'}}>Pickup Station</Text>
+                                 <Text style={{fontSize:11,fontWeight:'400'}}>Shipping  ₦450</Text>
+                                   <Text  style={{fontSize:11,fontWeight:'400'}}>Delivery by 7Dec when you order within next 20hr  52mins </Text>
+                               </View>
+                            </View>
+                      </View>
+                      <View style={{width:'20%'}}><Text style={{fontSize:11,textAlign:'right',fontWeight:'300',color:'blue'}}>Details</Text></View>
+                  </View>
+
+                  <View style={{flexDirection:'row',justifyContent:'space-between',marginBottom:10}}>
+                      <View style={{width:'80%'}}>
+                          <View style={{flexDirection:'row'}}>
+                              <View style={styles.container11}><Ionicons name="bus" size={12} color="#28b67d" /></View>
+                              <View style={{marginLeft:6}}>
+                                 <Text style={{color:'#000',fontSize:13,fontWeight:'500'}}>Return Policy</Text>
+                                 <Text style={{fontSize:12}}>Free return within 15 days for Official store items and 7 days for other eligble items</Text> 
+                               </View>
+                            </View>
+                      </View>
+                  
+                  </View>
+
+                  <View style={{flexDirection:'row',justifyContent:'space-between',marginBottom:10}}>
+                      <View style={{width:'80%'}}>
+                          <View style={{flexDirection:'row'}}>
+                              <View style={styles.container11}><Ionicons name="bus" size={12} color="#28b67d" /></View>
+                              <View style={{marginLeft:6}}>
+                                 <Text style={{color:'#000',fontSize:13,fontWeight:'500'}}>Warranty</Text>
                                  <Text style={{fontSize:12}}>Shipping  ₦450</Text>
                                    <Text  style={{fontSize:12}}>Delivery by 7Dec when you order within next 20hr  52mins </Text>
                                </View>
                             </View>
                       </View>
-                      <View style={{width:'20%'}}><Text style={{fontSize:12,textAlign:'right'}}>Details</Text></View>
-                  </View>
-
-                  <View style={{flexDirection:'row',justifyContent:'space-between',marginBottom:10}}>
-                      <View style={{width:'80%'}}>
-                          <View style={{flexDirection:'row'}}>
-                              <View style={styles.container11}><Ionicons name="bus" size={12} color="#28b67d" /></View>
-                              <View style={{marginLeft:6}}>
-                                 <Text>Return Policy</Text>
-                                 <Text style={{fontSize:12}}>Free return within 15 days for Official store items and 7 days for other eligble items</Text> 
-                               </View>
-                            </View>
-                      </View>
-                      <View style={{width:'20%'}}><Text style={{fontSize:12,textAlign:'right'}}>Details</Text></View>
+                    
                   </View>
 
               </View>
 
-             <View style={{paddingLeft:10,paddingTop:15,paddingBottom:10}}><Text style={{fontSize:12}}>PRODUCT DETAILS</Text></View>
+      <View style={{paddingLeft:10,paddingTop:15,paddingBottom:10}}><Text style={{fontSize:11,fontWeight:'300'}}>PRODUCT DETAILS</Text></View>
 
-             <View style={{flexDirection:'row',
-            alignItems:'center',justifyContent:'space-between',paddingHorizontal:10,paddingVertical:10,backgroundColor:'#fff'}}>
-                 <Text style={{fontSize:12}}>Description</Text>
+    <View style={{paddingHorizontal:5}}>
+                  <View style={{flexDirection:'row',
+            alignItems:'center',justifyContent:'space-between',paddingHorizontal:10,paddingVertical:10,backgroundColor:'#fff',borderTopLeftRadius:3,borderTopRightRadius:3}}>
+                 <Text style={{fontSize:12,fontWeight:'400'}}>Description</Text>
                  <Ionicons name="ios-chevron-forward-sharp" size={12} color="#000" /> 
              </View>
-             
+
+              <View style={styles.container12}>
+                 <Text style={{fontSize:12,fontWeight:'300'}}>- Designed for aerobic and anerobic exrcise</Text>
+                 <Text style={{fontSize:12,fontWeight:'300'}}>- Physical fitness and weight loss</Text>
+                 <Text style={{fontSize:12,fontWeight:'300'}}>- Can effectively build muscle,strength and tone the body</Text>
+                 <Text style={{fontSize:12,fontWeight:'300'}}>- Control the tension by shortening or lengthenung the band</Text>
+             </View>
+             </View>
+
+             <View style={styles.container13}><Text style={{fontSize:12,fontWeight:'400',color:'grey'}}>CUSTOMER ALSO VIEWED</Text></View>
+
+
+{/* 
+             <View style={styles.container14}>
+                 <Image source={require('../assets/farn.jpg')} resizeMode="contain" style={{width:'100%',height:120,marginBottom:15}}/>
+                 <Text numberOfLines={1} style={{fontSize:12,fontWeight:'300',letterSpacing:0.1,textAlign:'left',marginBottom:5}}>UMIDIGI A9 Andriod 11fg ghiofrd  </Text>
+                 <Text style={{fontSize:11,fontWeight:'bold',letterSpacing:0.1}}>₦ 450</Text>
+                 <Text style={{fontSize:10,fontWeight:'300',color:'grey',letterSpacing:0.1,textDecorationLine:'line-through'}}>₦ 45,000</Text>
+
+
+             </View> */}
+    
+
+        <FlatList  
+        horizontal
+         data={does}
+        renderItem={ wego}
+        keyExtractor={item => item.id}/>
+
+<View style={styles.container13}><Text style={{fontSize:12,fontWeight:'400',color:'grey'}}>CUSTOMER FEEDBACK</Text></View>
+
+  
+
+
+        <View  style={{paddingHorizontal:5}}>
+             <View style={styles.container15}>
+                 <View>
+                     <Text style={{fontSize:12,fontWeight:'500',letterSpacing:0.1,marginBottom:10}}>Product Rating $ Review</Text>
+                     <Text style={{fontSize:10,fontWeight:'300'}}>4.3/5  (263 rating)</Text>
+                 </View>
+                 <View>
+                     <Ionicons name="ios-chevron-forward-sharp" size={14} color="#000" /> 
+                 </View>
+             </View>
+    </View>
+
+
+     <View style={{paddingHorizontal:5}}>
+         <View style={{backgroundColor:'#fff',paddingHorizontal:8}}>
+             <View>
+            <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',borderTopWidth:0.3,borderTopColor:"grey",paddingTop:5}}>
+                <View style={{flexDirection:'row',alignItems:'center'}}>
+                    <Ionicons name="star-sharp" size={12} color="#e4a788" /> 
+                    <Ionicons name="star-sharp" size={12} color="#e4a788" style={{marginLeft:4}}/>
+                    <Ionicons name="star-sharp" size={12} color="#e4a788" style={{marginLeft:4}}/>
+                    <Ionicons name="star-sharp" size={12} color="#e4a788" style={{marginLeft:4}}/>
+                    <Ionicons name="star-half-sharp" size={12} color="#e4a788" style={{marginLeft:4}}/>
+                </View>
+                <View><Text style={{fontSize:11,fontWeight:'300',color:'lightGrey'}}>06-12-2021 A</Text></View>
+            </View>
+            <Text style={{fontSize:12,fontWeight:'500',marginBottom:5,marginTop:8}}>I have mixed feeling</Text>
+            <Text numberOfLines={1} style={{fontSize:11,marginBottom:10,width:'70%'}}>the phone is already hanging at less than a month old.it is not a good sign</Text>
+            <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',marginBottom:10}}>
+                <Text  style={{fontSize:11,color:'grey',fontWeight:'300'}}>by JANET</Text>
+                {/* <Text style={{fontSize:11,color:'green',fontWeight:'300'}}>Verifed Purchase</Text> */}
+                <View style={{flexDirection:'row',alignItems:'center'}}>
+                    <MaterialCommunityIcons  name="checkbox-marked-circle-outline" size={14} color="#e4a788" />   
+                    <Text style={{fontSize:11,color:'green',fontWeight:'300',marginLeft:3}}>Verifed Purchase</Text>
+                </View>
+            </View>
+         </View>
+
+         <View>
+            <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',borderTopWidth:0.3,borderTopColor:"grey",paddingTop:5}}>
+                <View style={{flexDirection:'row',alignItems:'center'}}>
+                    <Ionicons name="star-sharp" size={12} color="#e4a788" /> 
+                    <Ionicons name="star-sharp" size={12} color="#e4a788" style={{marginLeft:4}}/>
+                    <Ionicons name="star-sharp" size={12} color="grey" style={{marginLeft:4}}/>
+                    <Ionicons name="star-sharp" size={12} color="grey" style={{marginLeft:4}}/>
+                    <Ionicons name="star-sharp" size={12} color="grey" style={{marginLeft:4}}/>
+                 
+                </View>
+                <View><Text style={{fontSize:11,fontWeight:'300',color:'lightGrey'}}>06-12-2021 A</Text></View>
+            </View>
+            <Text style={{fontSize:12,fontWeight:'500',marginBottom:5,marginTop:8}}>I have mixed feeling</Text>
+            <Text numberOfLines={1} style={{fontSize:11,marginBottom:10,width:'70%'}}>the phone is already hanging at less than a month old.it is not a good sign</Text>
+            <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',marginBottom:10}}>
+                <Text  style={{fontSize:11,color:'grey',fontWeight:'300'}}>by PAUL</Text>
+                {/* <Text style={{fontSize:11,color:'green',fontWeight:'300'}}>Verifed Purchase</Text> */}
+                <View style={{flexDirection:'row',alignItems:'center'}}>
+                    <MaterialCommunityIcons  name="checkbox-marked-circle-outline" size={14} color="#e4a788" />   
+                    <Text style={{fontSize:11,color:'green',fontWeight:'300',marginLeft:3}}>Verifed Purchase</Text>
+                </View>
+            </View>
+         </View>
+
+         <View>
+            <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',borderTopWidth:0.3,borderTopColor:"grey",paddingTop:5}}>
+                <View style={{flexDirection:'row',alignItems:'center'}}>
+                    <Ionicons name="star-sharp" size={12} color="#e4a788" /> 
+                    <Ionicons name="star-sharp" size={12} color="#e4a788" style={{marginLeft:4}}/>
+                    <Ionicons name="star-sharp" size={12} color="#e4a788" style={{marginLeft:4}}/>
+                    <Ionicons name="star-sharp" size={12} color="grey" style={{marginLeft:4}}/>
+                    <Ionicons name="star-sharp" size={12} color="grey" style={{marginLeft:4}}/>
+                </View>
+                <View><Text style={{fontSize:11,fontWeight:'300',color:'lightGrey'}}>06-12-2021 A</Text></View>
+            </View>
+            <Text style={{fontSize:12,fontWeight:'500',marginBottom:5,marginTop:8}}>I have mixed feeling</Text>
+            <Text numberOfLines={1} style={{fontSize:11,marginBottom:10,width:'70%'}}>the phone is already hanging at less than a month old.it is not a good sign</Text>
+            <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',marginBottom:10}}>
+                <Text  style={{fontSize:11,color:'grey',fontWeight:'300'}}>by CHUKWUBUIKE</Text>
+
+                <View style={{flexDirection:'row',alignItems:'center'}}>
+                    <MaterialCommunityIcons  name="checkbox-marked-circle-outline" size={14} color="#e4a788" />   
+                    <Text style={{fontSize:11,color:'green',fontWeight:'300',marginLeft:3}}>Verifed Purchase</Text>
+                </View>
+               
+            </View>
+         </View>
+
+         </View>
+      </View>
+
+      <View style={{paddingHorizontal:10,paddingTop:15,paddingBottom:10}}>
+          <Text style={{fontSize:12,fontWeight:'400',color:'grey',letterSpacing:0.1}}>
+              CUSTOMER ALSO BOUGHT
+          </Text>
+      </View>
+
+    
+      <FlatList  
+        horizontal
+         data={does1}
+        renderItem={ wego1}
+        keyExtractor={item => item.id}/>
+
+        <View style={{paddingHorizontal:10,paddingTop:15,paddingBottom:10}}>
+            <Text style={{color:'grey',fontSize:12}}>SELLER INFORMATION</Text>
+        </View>
+   <View style={{paddingHorizontal:10,backgroundColor:'#fff'}}> 
+        <View style={{flexDirection:'row',justifyContent:'space-between',backgroundColor:'#fff',paddingTop:8}}>
+           <Text style={{color:'#000',fontSize:12,letterSpacing:0.1}}>Pernod Ricard</Text>
+           <Ionicons name="md-chevron-forward-outline" size={12} color="#e4a788" /> 
+        </View>
+        <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',paddingVertical:10,borderTopColor:'grey',borderTopWidth:0.3,marginTop:10}}>
+            <View>
+                <Text style={{fontSize:11}}>{txt1}  Seller Score</Text>
+                <Text style={{fontSize:11}}>{txt2}  Followers</Text>
+            </View>
+            <View style={{paddingVertical:7,paddingHorizontal:4,backgroundColor:'#28b67d',borderRadius:3,}}>
+               <Text style={{color:'#fff',fontSize:10,fontWeight:'500'}}> FOLLOW</Text>
+         
+            </View>
+        </View>
+      <View style={{borderTopColor:'grey',borderTopWidth:'0.3'}}>
+        <View style={{marginTop:10,marginBottom:15}}>
+            <Text>Seller Performance</Text>
+        </View>
+        <View style={{flexDirection:'row',alignItems:'center',marginBottom:10}}>
+            <View style={{padding: 5,backgroundColor:'#28b67d',borderRadius:100}}><Ionicons name="star-sharp" size={12} color="#fff" /></View>
+            <Text style={{marginLeft:5,fontSize:12,fontWeight:'300'}}>Order Fulfillment Rate: {ere} </Text>
+        </View>
+        <View style={{flexDirection:'row',alignItems:'center',marginBottom:10}}>
+            <View style={{padding: 5,backgroundColor:'#28b67d',borderRadius:100}}><Ionicons name="star-sharp" size={12} color="#fff" /></View>
+            <Text style={{marginLeft:5,fontSize:12,fontWeight:'300'}}>Order Score: {ere}</Text>
+        </View>
+        <View style={{flexDirection:'row',alignItems:'center',marginBottom:10}}>
+            <View style={{padding: 5,backgroundColor:'#28b67d',borderRadius:100}}><Ionicons name="star-sharp" size={12} color="#fff" /></View>
+            <Text style={{marginLeft:5,fontSize:12,fontWeight:'300'}}>Customer Rating: {ere}</Text>
+        </View>
+      </View>
+
+        <View style={{borderTopWidth:0.3,borderTopColor:'grey'}}>
+
+        <View style={{alignItems:'center'}}>
+           <View style={styles.container16}>
+           {/* <View style={{width:200,height:180}}><Image source={require('../assets/sec.png')} resizeMode={['center']} style={{ flex:1,width:'100%',height:'100%', }}/></View> */}
+            <View style={styles.container17}>
+                <Image source={require('../assets/ca.jpg')} style={{width:100,height:100,marginBottom:20}} resizeMode='contain'/>
+                <Text style={{fontSize:10,textAlign:'center',marginBottom:5,fontWeight:'300',color:'#000',letterSpacing:0.1}}>Triple Protection Toothpaste Cavity Fighter 140g</Text>
+                {/* <Text style={{fontSize:12,fontWeight:Platform.OS === 'ios'? '600' : '800'}}>₦250</Text> */}
+            </View>
+            <View style={styles.container18}>
+            <Image source={require('../assets/ca1.jpg')} style={{width:100,height:100,marginBottom:20}} resizeMode='contain'/>
+            <Text style={{fontSize:10,textAlign:'center',marginBottom:5,fontWeight:'300',color:'#000',letterSpacing:0.1}}>Multi-Purpose Washing Liquid Lemon 1l</Text>
+            {/* <Text style={{fontSize:12,fontWeight:Platform.OS === 'ios'? '600' : '800'}}>₦380</Text> */}
+            </View>
+           </View>
+           <View style={styles.container16}>
+           {/* <View style={{width:200,height:180}}><Image source={require('../assets/sec.png')} resizeMode={['center']} style={{ flex:1,width:'100%',height:'100%', }}/></View> */}
+            <View  style={styles.container19}>
+            <Image source={require('../assets/ca2.jpg')} style={{width:100,height:100,marginBottom:20}} resizeMode='contain'/>
+            <Text style={{fontSize:10,textAlign:'center',marginBottom:5,fontWeight:'300',color:'#000',letterSpacing:0.1}}>@in1 Tropical Sensations Handwash Washing Pow...</Text>
+            {/* <Text style={{fontSize:12,fontWeight:Platform.OS === 'ios'? '600' : '800'}}>₦555</Text> */}
+            </View>
+            <View style={styles.container20}>
+            <Image source={require('../assets/ca3.jpg')} style={{width:100,height:100,marginBottom:20}} resizeMode='contain'/>
+            <Text style={{fontSize:10,textAlign:'center',marginBottom:5,fontWeight:'300',color:'#000',letterSpacing:0.1}}>Protect Handwashing Detergent Powder - 900g</Text>
+            {/* <Text style={{fontSize:12,fontWeight:Platform.OS === 'ios'? '600' : '800'}}>₦499</Text> */}
+            </View>
+           </View>
+          </View>
+        </View>
+   </View>
+
+ <View style={{backgroundColor:'#fff',paddingVertical:12,paddingHorizontal:10,marginBottom:15}}><Text style={{color:'#000',fontSize:12,fontWeight:'300'}}>Report incorrect product information</Text></View>
+
+<View style={{paddingHorizontal:10,paddingBottom:10}}>
+    <Text style={{fontSize:12,fontWeight:'400',letterSpacing:0.1,color:'grey'}}>SPONSORED PRODUCTS</Text>
+</View>
+
+<FlatList  
+        horizontal
+         data={does1}
+        renderItem={ wego1}
+        keyExtractor={item => item.id}/>
+
+
+<View style={{paddingHorizontal:10,paddingBottom:10}}>
+    <Text style={{fontSize:12,fontWeight:'400',letterSpacing:0.1,color:'grey'}}>SPONSORED PRODUCTS</Text>
+</View>
+
+
+
+             {/*  <View><Text>CUSTOMERS AND ALSO VIEWED</Text></View>
+
+             <View>
+             <Image source={require('../assets/col.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
+                 <Text>tyuk</Text>
+                 <Text>₦450</Text>
+                 <Text>₦450</Text>
+             </View>
+
+             <View>
+                 <Text>
+                     CUSTOM
+                 </Text>
+             </View> */}
 
            </ScrollView>
 
@@ -282,8 +578,95 @@ container11:{
          elevation:1,
          shadowOpacity:0.8,
          alignSelf:'flex-start'
-}
+},
+container12:{
+  backgroundColor:'#fff',
+  paddingHorizontal:10,
+  paddingVertical:15,borderTopColor:'grey',
+  borderTopWidth:0.3,
+  borderBottomLeftRadius:3,
+  borderBottomRightRadius:3,
+},
+container13:{
+    paddingHorizontal:10,
+    paddingTop:15,
+    paddingBottom:10
+},
+container14:{
+    paddingHorizontal:10,
+    paddingVertical:10,
+    borderRadius:3,
+    backgroundColor:'#fff',
+    width:150,
+    marginRight:10
+    
+},container15:{
+  flexDirection:'row' ,
+  justifyContent:'space-between',
+  backgroundColor:'#fff',
+  padding:10,
+  alignItems:'center',
 
+
+},
+container16:{
+    flexDirection:'row',
+    alignItems:'center',
+ //    width:'100%'
+    
+  },
+ 
+   container17:{
+     width:"48%",height:180,
+     borderRightColor:'#d7d7d7',
+     borderRightWidth:0.5,
+     borderBottomColor:'#d7d7d7',
+     borderBottomWidth:0.5,
+    //  borderLeftColor:'#e6e6e6',
+    //  borderLeftWidth:0.5,
+     alignItems:'center',
+     paddingTop:12,
+     paddingHorizontal:4
+   },
+   container18:{
+    width:"48%",height:180,
+    borderLeftColor:'#d7d7d7',
+    borderLeftWidth:0.5,
+    borderBottomColor:'#d7d7d7',
+    borderBottomWidth:0.5,
+    // borderRightColor:'#e6e6e6',
+    // borderRightWidth:0.5,
+    alignItems:'center',
+    paddingTop:12,
+    paddingHorizontal:4
+   
+  },
+
+  container19:{
+    width:"48%",height:180,
+    borderRightColor:'#d7d7d7',
+    borderRightWidth:0.5,
+    borderBottomColor:'#e6e6e6',
+    borderBottomWidth:0.5,
+    // borderLeftColor:'#e6e6e6',
+    // borderLeftWidth:0.5,
+    alignItems:'center',
+    paddingTop:12,
+    paddingHorizontal:4
+  },
+  container20:{
+    width:"48%",height:180,
+    borderLeftColor:'#d7d7d7',
+    borderLeftWidth:0.5,
+    borderBottomColor:'#e6e6e6',
+    borderBottomWidth:0.5,
+    // borderRightColor:'#e6e6e6',
+    // borderRightWidth:0.5,
+    alignItems:'center',
+    paddingTop:12,
+    paddingHorizontal:4
+   
+  },
 })
 
 export default detailScreen;

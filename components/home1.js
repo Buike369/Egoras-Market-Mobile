@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text,FlatList,Image,Animated,Dimensions,StyleSheet,TouchableOpacity,TextInput,SafeAreaView, ScrollView, ImageBackground, VirtualizedList, Pressable,Platform} from 'react-native';
+import {View,Text,FlatList,Image,Animated,Dimensions,StyleSheet,TouchableOpacity,TextInput,SafeAreaView, ScrollView, ImageBackground, VirtualizedList, Pressable,Platform,StatusBar} from 'react-native';
 import {Ionicons } from 'react-native-vector-icons';
 // import Search from './home7';
 
@@ -56,12 +56,12 @@ const DATA = [
       
     },
     {
-        id: 4,
+        id: 10,
         img1: require("../assets/col.jpg"),
       
     },
     {
-        id: 10,
+        id: 11,
         img1: require("../assets/col.jpg"),
       
     },
@@ -136,7 +136,11 @@ const carl =({navigation})=>{
 
 
     return( 
+        
         <SafeAreaView style={styles.container}>
+            <StatusBar   />
+      
+         
         <View > 
             <SafeAreaView >
 
