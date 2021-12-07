@@ -148,7 +148,7 @@ const color ={
                       
 
                       <View style={styles.container3}>
-                         <ScrollView> 
+                         <ScrollView showsVerticalScrollIndicator={false}> 
                         
 
                      {

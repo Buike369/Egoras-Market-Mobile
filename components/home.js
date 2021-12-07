@@ -1,10 +1,32 @@
 import React from 'react';
 import {View,Text,StyleSheet,Image,ImageBackground, Pressable} from 'react-native';
 import {Ionicons } from 'react-native-vector-icons';
+import { 
+  DancingScript_400Regular,
+  DancingScript_500Medium,
+  DancingScript_600SemiBold,
+  DancingScript_700Bold 
+} from '@expo-google-fonts/dancing-script';
+import {useFonts} from 'expo-font';
+import AppLoading from 'expo-app-loading';
+
 
 
 
 export default function desk({navigation}){
+
+  let [fontsLoaded, error ]=useFonts({
+    DancingScript_400Regular,
+  DancingScript_500Medium,
+  DancingScript_600SemiBold,
+  DancingScript_700Bold,
+  'bold':require('../assets/fonts/Roboto-Italic.ttf') 
+  })
+
+
+  if(!fontsLoaded){
+  return <AppLoading/>
+  }
        
        const way =()=>{
            navigation.navigate('Home1')
@@ -34,9 +56,10 @@ const styles = StyleSheet.create({
         height:'100%'
       },
       text1:{
-        fontSize:30,
-        fontWeight:'600',
-        color:"#28b67d"
+        fontSize:40,
+        // fontWeight:'600',
+        color:"#28b67d",
+        fontFamily:'DancingScript_600SemiBold'
       
     
       },

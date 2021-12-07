@@ -46,7 +46,7 @@ const Section =()=>{
           <Pressable onPress={firm2}><View testID="make2"  style={changeFlow === "make2"? [styles.container111,styles.container112]: styles.container8}><Text style={ changeFlow === "make2" ? [styles.container5,styles.container6,styles.container113]:[styles.container5,styles.container6]}>BLACK FRIDAY</Text></View></Pressable>
         </View>
         */}
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.container7}>
             <View style={styles.container8}>
                 <Text style={{fontSize:10,letterSpacing:0.8,fontWeight:'500',marginBottom:8}}>Fashionable hot sale</Text>

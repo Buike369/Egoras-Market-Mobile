@@ -5,6 +5,14 @@ import {Feather } from 'react-native-vector-icons';
 import {MaterialCommunityIcons } from 'react-native-vector-icons';
 
 
+
+
+
+const ImageArray = [{id:31,imgs4:require('../assets/pw7.png')},{id:32,imgs4:require('../assets/pw.png')},{id:33,imgs4:require('../assets/sam4.png')},{id:34,imgs4:require('../assets/ant5.png')},{id:35,imgs4:require('../assets/sam6.png')},{id:36,imgs4:require('../assets/ant5.png')},{id:37,imgs4:require('../assets/sam7.png')},{id:38,imgs4:require('../assets/pw9.png')},{id:39,imgs4:require('../assets/ant5.png')},{id:40,imgs4:require('../assets/pw10.png')}]
+
+
+
+
 const detailScreen =({navigation})=>{
 
 
@@ -104,11 +112,20 @@ const DivScroll1 =({title})=>(
 
 
             <ScrollView>
-               <View style={{padding:10,alignItems:'center'}}>
-                 <View style={[styles.container1,styles.container10]}>
+               
 
-                 </View>
+             <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false}>
+             {ImageArray.map((items4)=>{
+               return(
+                 <View style={{paddingVertical:10,alignItems:'center'}}>
+                    <View style={styles.container1}>
+                      <Image style={{width:200,height:200}} source={items4.imgs4} resizeMode="cover" key={items4.id}/>
+                  </View>
               </View>
+               
+               )} )}
+               </ScrollView>
+
 
               <View style={[styles.container1,styles.container3]}>
                   <View style={[styles.container4,styles.container5]}><Text style={{fontSize:10,color:'#fff',fontWeight:'500',}}>Official Store</Text></View>
@@ -489,28 +506,30 @@ const DivScroll1 =({title})=>(
         keyExtractor={item => item.id}/>
 
 
-<View style={{paddingHorizontal:10,paddingBottom:10}}>
-    <Text style={{fontSize:12,fontWeight:'400',letterSpacing:0.1,color:'grey'}}>SPONSORED PRODUCTS</Text>
+<View style={{paddingHorizontal:10,paddingBottom:10,paddingTop:15,flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
+    <Text style={{fontSize:12,fontWeight:'400',letterSpacing:0.1,color:'#000'}}>RECENTLY VIEWED</Text>
+    <Text style={{fontSize:12,color:'green'}}>SEE ALL</Text>
 </View>
 
+<FlatList  
+        horizontal
+         data={does1}
+        renderItem={ wego1}
+        keyExtractor={item => item.id}/>
 
 
-             {/*  <View><Text>CUSTOMERS AND ALSO VIEWED</Text></View>
-
-             <View>
-             <Image source={require('../assets/col.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                 <Text>tyuk</Text>
-                 <Text>₦450</Text>
-                 <Text>₦450</Text>
-             </View>
-
-             <View>
-                 <Text>
-                     CUSTOM
-                 </Text>
-             </View> */}
-
+        <View style={{marginBottom:30}}><Text></Text></View>
+             
+  
            </ScrollView>
+
+    
+           <View style={styles.container28}>
+            <Text>ADD TO CHART</Text>
+            <Text>ADD TO CHART</Text>
+            <Text>ADD TO CHART</Text>
+           </View>
+
 
         </SafeAreaView>
        
@@ -534,9 +553,12 @@ const styles = StyleSheet.create({
          elevation:1,
          shadowOpacity:0.8,
         //  backgroundColor:'#28b67d', 
-         borderRadius:3,
+         borderRadius:5,
          backgroundColor:'#fff',
-         width:'100%',
+        //  width:'100%',
+         padding: 20,
+         marginRight:10,
+         marginLeft:2
        
  },
  container3:{
@@ -567,9 +589,9 @@ backgroundColor:'red',
 borderBottomLeftRadius:10,
 borderTopLeftRadius:10
 },
-container10:{
-    height:260,
-},
+// container10:{
+//     height:260,
+// },
 container11:{
     padding:10,borderRadius:3,backgroundColor:'#fff',
     shadowColor:'grey',
@@ -667,6 +689,18 @@ container16:{
     paddingHorizontal:4
    
   },
+  container28:{
+      backgroundColor:'green',
+      paddingVertical:8,
+      paddingHorizontal:10,
+      flexDirection:'row',
+      position:'absolute',
+      bottom:0,
+      left:0,
+      right:0,zIndex:8
+
+      
+  }
 })
 
 export default detailScreen;

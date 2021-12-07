@@ -21,7 +21,7 @@ const SectionHomeView1=({navigation})=>{
             </View>
 
 
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
             <Image source={require('../assets/wedem.jpg')} style={{height:130,width:'100%',backgroundColor:'#cbeee0'}} resizeMode='contain'/>
 
 

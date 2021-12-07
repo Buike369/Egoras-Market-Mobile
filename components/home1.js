@@ -1,7 +1,23 @@
 import React from 'react';
 import {View,Text,FlatList,Image,Animated,Dimensions,StyleSheet,TouchableOpacity,TextInput,SafeAreaView, ScrollView, ImageBackground, VirtualizedList, Pressable,Platform,StatusBar} from 'react-native';
 import {Ionicons } from 'react-native-vector-icons';
-// import Search from './home7';
+import Search from './home7';
+import { 
+    Roboto_100Thin,
+    Roboto_100Thin_Italic,
+    Roboto_300Light,
+    Roboto_300Light_Italic,
+    Roboto_400Regular,
+    Roboto_400Regular_Italic,
+    Roboto_500Medium,
+    Roboto_500Medium_Italic,
+    Roboto_700Bold,
+    Roboto_700Bold_Italic,
+    Roboto_900Black,
+    Roboto_900Black_Italic 
+  } from '@expo-google-fonts/roboto';
+  import {useFonts} from 'expo-font';
+  import AppLoading from 'expo-app-loading';
 
 
 
@@ -107,12 +123,31 @@ const Item = ({img4})=>(
     <Text style={{fontSize:12,marginBottom:10}}>₦3,750</Text>
     <Text style={{fontSize:8,marginBottom:4,letterSpacing:0.1}}>89 items left</Text>
     <View style={styles.container24}>
-        <View style={styles.container25}></View>
+    <View style={styles.container25}></View>
     </View>
 </View>
 )
 
 const carl =({navigation})=>{
+
+    let [fontsLoaded, error ]=useFonts({
+        Roboto_100Thin,
+        Roboto_100Thin_Italic,
+        Roboto_300Light,
+        Roboto_300Light_Italic,
+        Roboto_400Regular,
+        Roboto_400Regular_Italic,
+        Roboto_500Medium,
+        Roboto_500Medium_Italic,
+        Roboto_700Bold,
+        Roboto_700Bold_Italic,
+        Roboto_900Black,
+        Roboto_900Black_Italic 
+      })
+    
+      if(!fontsLoaded){
+        return <AppLoading/>
+        }
 
       const farway1 = ()=>{
           navigation.navigate('City')
@@ -130,7 +165,7 @@ const carl =({navigation})=>{
         );
 
 
-    const data =[require('../assets/pad.jpg'), require('../assets/pad2.jpg'),require('../assets/pad1.gif'),require('../assets/pad3.gif'),require('../assets/pad.jpg')];
+    const data =[{id:2,wan:require('../assets/pad.jpg')}, {id:3,wan:require('../assets/pad2.jpg')},{id:4,wan:require('../assets/pad1.gif')},{id:5,wan:require('../assets/pad3.gif')},{id:6,wan:require('../assets/pad.jpg')}];
     const imageW = width * 1;
     const imageH = (imageW * 0.57)- 5;
 
@@ -149,14 +184,14 @@ const carl =({navigation})=>{
                 <View style={{flexDirection:'row',alignItems:'center'}}>
                    <Ionicons name="md-search" size={20} color="#808080" style={styles.container2} />
                    <TextInput placeholder='search on Egoroas Market' style={{width:'90%',paddingVertical:15,paddingLeft:30,borderRadius:8,backgroundColor:'white'}}/>
-                   <Ionicons name="cart-outline" size={30} color="#fff" style={{marginLeft:5}} />
+                <Pressable onPress={()=>navigation.goBack()}><Ionicons name="cart-outline" size={30} color="#fff" style={{marginLeft:5}} /></Pressable>
                 </View>
            </View>
         
            {/* <Search/> */}
-     <ScrollView>
+     <ScrollView showsVerticalScrollIndicator={false}>
 
-        
+        <View>
              <FlatList  data={data}
              horizontal
              pagingEnabled
@@ -164,12 +199,22 @@ const carl =({navigation})=>{
                renderItem={({item})=>{
                    return  <Pressable onPress={farway1}>
                    <View style={{width,alignItems:'center'}}>
-                       <Image source={item} style={{width:'100%',height:imageH,resizeMode:'contain',alignItems:'center'}}/>
+                       <Image source={item.wan} style={{width:'100%',height:imageH,resizeMode:'contain',alignItems:'center'}}/>
                      
                    </View>
                    </Pressable>
                }}
              />
+
+             {
+                 data.map((items,yan)=>(
+                         <View style={styles.circleDiv}>
+                             <View  key={yan} style={styles.circleDivContent}></View>
+                         </View>
+                     )
+                 )
+             }
+             </View>
             
 
              <View style={{paddingHorizontal:10,marginBottom:5}}>
@@ -221,7 +266,7 @@ const carl =({navigation})=>{
                    <Text style={{fontSize:12,color:'white',fontWeight:'500'}}>Flash Sale</Text>
                    <Text style={{fontSize:10,color:'white'}}>TIME LEFT</Text> 
                </View>
-                   <Text style={{fontSize:10,color:'white',fontWeight:'600'}}>SEE ALL</Text>
+                   <Text style={{fontSize:10,color:'white',fontWeight:'600',}}>SEE ALL</Text>
            </View>
 
              
@@ -294,8 +339,8 @@ const carl =({navigation})=>{
 
       <View style={{alignItems:'center'}}>
      <View style={styles.container13}>
-
-      <View style={styles.container12}>
+         
+ <View style={styles.container12}>
           <View style={{alignItems:'center'}}>
             <Image source={require('../assets/sam.png')} style={{width:70,height:40,marginBottom:10}}/>
             <Text style={{fontSize:9,fontWeight:'300'}}>November 23</Text>
@@ -313,6 +358,7 @@ const carl =({navigation})=>{
               <Text style={{fontSize:9,fontWeight:'300'}}>November 26</Text>
           </View>   
       </View>
+     
 
       <View style={styles.container12}>
           <View style={{alignItems:'center'}}>
@@ -355,10 +401,13 @@ const carl =({navigation})=>{
      <View style={styles.container13}>
 
       <View style={styles.container12}>
+
+          <Pressable onPress={()=>navigation.navigate('City2')}>
           <View style={{alignItems:'center'}}>
-          <Image source={require('../assets/pw7.png')} style={{width:70,height:40,marginBottom:10}}/>
+            <Image source={require('../assets/pw7.png')} style={{width:70,height:40,marginBottom:10}}/>
             <Text style={{fontSize:9,fontWeight:'300'}}>Health & Beauty</Text>
           </View>
+          </Pressable>
           <View style={{alignItems:'center'}}>
              <Image source={require('../assets/pw.png')} style={{width:70,height:40,marginBottom:10}}/>
              <Text style={{fontSize:9,fontWeight:'300'}}>Phone Deals</Text>
@@ -1335,6 +1384,23 @@ container25:{
 },
 container26:{
     width:'100%'
+},
+circleDiv:{
+    position:'absolute',
+    bottom:15,
+    height:10,
+    flexDirection:'row',
+    // justifyContent:'center',
+    alignItems:'center'
+
+
+},
+circleDivContent:{
+    width:6,
+    height:6,
+    borderRadius:50,
+    backgroundColor:'#fff',
+    marginRight:5
 }
 
 
