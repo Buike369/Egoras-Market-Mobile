@@ -111,7 +111,7 @@ const DivScroll1 =({title})=>(
             </View>
 
 
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                
 
              <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false}>
@@ -418,11 +418,26 @@ const DivScroll1 =({title})=>(
       </View>
 
     
-      <FlatList  
+      {/* <FlatList  
         horizontal
          data={does1}
         renderItem={ wego1}
-        keyExtractor={item => item.id}/>
+        keyExtractor={item => item.id}/> */}
+
+<ScrollView horizontal showsHorizontalScrollIndicator={false}>
+     { does1.map((eat)=>{return(
+
+   <View style={styles.container14}>
+  <Image source={eat.img41} resizeMode="contain" style={{width:'100%',height:120,marginBottom:15}}/>
+   <Text style={{fontSize:9,color:'red',backgroundColor:'#cfefe2',position:'absolute',top:7,right:10,padding:2}}>-49%</Text>
+     <Text numberOfLines={1} style={{fontSize:12,fontWeight:'300',letterSpacing:0.1,textAlign:'left',marginBottom:5}}>UMIDIGI A9 Andriod 11fg ghiofrd  </Text>
+   <Text style={{fontSize:11,fontWeight:'bold',letterSpacing:0.1}}>₦ 450</Text>
+    <Text style={{fontSize:10,fontWeight:'300',color:'grey',letterSpacing:0.1,textDecorationLine:'line-through'}}>₦ 45,000</Text>
+  </View>
+
+)})  }
+
+</ScrollView>
 
         <View style={{paddingHorizontal:10,paddingTop:15,paddingBottom:10}}>
             <Text style={{color:'grey',fontSize:12}}>SELLER INFORMATION</Text>
@@ -499,11 +514,27 @@ const DivScroll1 =({title})=>(
     <Text style={{fontSize:12,fontWeight:'400',letterSpacing:0.1,color:'grey'}}>SPONSORED PRODUCTS</Text>
 </View>
 
-<FlatList  
+{/* <FlatList  
         horizontal
          data={does1}
         renderItem={ wego1}
-        keyExtractor={item => item.id}/>
+        keyExtractor={item => item.id}/> */}
+
+
+<ScrollView horizontal showsHorizontalScrollIndicator={false}>
+     { does1.map((eat)=>{return(
+
+   <View style={styles.container14}>
+  <Image source={eat.img41} resizeMode="contain" style={{width:'100%',height:120,marginBottom:15}}/>
+   <Text style={{fontSize:9,color:'red',backgroundColor:'#cfefe2',position:'absolute',top:7,right:10,padding:2}}>-49%</Text>
+     <Text numberOfLines={1} style={{fontSize:12,fontWeight:'300',letterSpacing:0.1,textAlign:'left',marginBottom:5}}>UMIDIGI A9 Andriod 11fg ghiofrd  </Text>
+   <Text style={{fontSize:11,fontWeight:'bold',letterSpacing:0.1}}>₦ 450</Text>
+    <Text style={{fontSize:10,fontWeight:'300',color:'grey',letterSpacing:0.1,textDecorationLine:'line-through'}}>₦ 45,000</Text>
+  </View>
+
+)})  }
+
+</ScrollView>
 
 
 <View style={{paddingHorizontal:10,paddingBottom:10,paddingTop:15,flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
@@ -511,26 +542,32 @@ const DivScroll1 =({title})=>(
     <Text style={{fontSize:12,color:'green'}}>SEE ALL</Text>
 </View>
 
-<FlatList  
+{/* <FlatList  
         horizontal
          data={does1}
         renderItem={ wego1}
-        keyExtractor={item => item.id}/>
+        keyExtractor={item => item.id}/> */}
 
 
-        <View style={{marginBottom:30}}><Text></Text></View>
+
+
+<ScrollView horizontal showsHorizontalScrollIndicator={false}>
+     { does1.map((eat)=>{return(
+
+   <View style={styles.container14}>
+  <Image source={eat.img41} resizeMode="contain" style={{width:'100%',height:120,marginBottom:15}}/>
+   <Text style={{fontSize:9,color:'red',backgroundColor:'#cfefe2',position:'absolute',top:7,right:10,padding:2}}>-49%</Text>
+     <Text numberOfLines={1} style={{fontSize:12,fontWeight:'300',letterSpacing:0.1,textAlign:'left',marginBottom:5}}>UMIDIGI A9 Andriod 11fg ghiofrd  </Text>
+   <Text style={{fontSize:11,fontWeight:'bold',letterSpacing:0.1}}>₦ 450</Text>
+    <Text style={{fontSize:10,fontWeight:'300',color:'grey',letterSpacing:0.1,textDecorationLine:'line-through'}}>₦ 45,000</Text>
+  </View>
+
+)})  }
+
+</ScrollView>
              
   
-           </ScrollView>
-
-    
-           <View style={styles.container28}>
-            <Text>ADD TO CHART</Text>
-            <Text>ADD TO CHART</Text>
-            <Text>ADD TO CHART</Text>
-           </View>
-
-
+</ScrollView>
         </SafeAreaView>
        
     )

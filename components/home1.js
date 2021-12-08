@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {View,Text,FlatList,Image,Animated,Dimensions,StyleSheet,TouchableOpacity,TextInput,SafeAreaView, ScrollView, ImageBackground, VirtualizedList, Pressable,Platform,StatusBar} from 'react-native';
 import {Ionicons } from 'react-native-vector-icons';
 import Search from './home7';
@@ -24,6 +24,11 @@ import {
 const {width,height} = Dimensions.get('screen');
 
 const windowWidth = Dimensions.get('window').width;
+
+// const [document,setDocument]=useState([]);
+
+  
+
 
 const DATA = [
     {
@@ -149,9 +154,9 @@ const carl =({navigation})=>{
         return <AppLoading/>
         }
 
-      const farway1 = ()=>{
-          navigation.navigate('City')
-      }
+    //   const farway1 = ()=>{
+    //       navigation.navigate('City')
+    //   }
 
 
       const farway2 =()=>{
@@ -169,6 +174,29 @@ const carl =({navigation})=>{
     const imageW = width * 1;
     const imageH = (imageW * 0.57)- 5;
 
+
+    const Changes =(item)=>{
+
+        let keyss = item.id
+        if (keyss == 2){
+            navigation.navigate('City')
+        }
+
+         if( keyss == 3){
+            navigation.navigate('City2')
+            }
+        
+        if(keyss == 4){
+            navigation.navigate('City6')
+           }
+        if (keyss == 5){
+            navigation.navigate('City')
+           }
+        if(keyss == 6){
+            navigation.navigate('City5')
+        }
+      
+        }
 
     return( 
         
@@ -195,9 +223,10 @@ const carl =({navigation})=>{
              <FlatList  data={data}
              horizontal
              pagingEnabled
-               keyExtractor={(_,index)=>index.toString()}
+            //    keyExtractor={(_,index)=>index.toString()}
+               keyExtractor={(item)=>item.id}
                renderItem={({item})=>{
-                   return  <Pressable onPress={farway1}>
+                   return  <Pressable onPress={()=>Changes(item)}>
                    <View style={{width,alignItems:'center'}}>
                        <Image source={item.wan} style={{width:'100%',height:imageH,resizeMode:'contain',alignItems:'center'}}/>
                      
@@ -205,7 +234,7 @@ const carl =({navigation})=>{
                    </Pressable>
                }}
              />
-
+{/* 
              {
                  data.map((items,yan)=>(
                          <View style={styles.circleDiv}>
@@ -213,7 +242,7 @@ const carl =({navigation})=>{
                          </View>
                      )
                  )
-             }
+             } */}
              </View>
             
 
@@ -339,7 +368,7 @@ const carl =({navigation})=>{
 
       <View style={{alignItems:'center'}}>
      <View style={styles.container13}>
-         
+
  <View style={styles.container12}>
           <View style={{alignItems:'center'}}>
             <Image source={require('../assets/sam.png')} style={{width:70,height:40,marginBottom:10}}/>

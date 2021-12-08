@@ -28,7 +28,7 @@ export default function wat4(){
 
 
 
-           <ScrollView>
+           <ScrollView showsVerticalScrollIndicator={false}>
 
            <View style={styles.container6}>
                <Text style={{fontSize:12,color:'grey',fontWeight:'600'}}>MY EGORAS MARKET ACCOUNT</Text>

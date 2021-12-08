@@ -89,7 +89,7 @@ const Stake =({navigation})=>{
 
 
        <View style={{backgroundColor:'#fff',paddingHorizontal:10,paddingVertical:8}}>
-           <Text>Top Deals</Text>
+           <Text style={{marginBottom:7}}>Top Deals</Text>
          <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false}> 
               {outPut.map((imt)=>{
 
@@ -201,8 +201,8 @@ const Stake =({navigation})=>{
 
       </View> */}
      
-     <View style={{backgroundColor:'#fff',paddingHorizontal:10,paddingVertical:8,marginTop:8}}>
-         <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',marginBottom:15}}>
+     <View style={{backgroundColor:'#fff',paddingVertical:8,marginTop:8}}>
+         <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',marginBottom:15,paddingHorizontal:10}}>
              <Text>Adidas Official Store</Text>
              <Text style={{fontSize:10,fontWeight:'400',letterSpacing:0.1,color:'red'}}>SEE ALL</Text>
          </View>
@@ -226,8 +226,8 @@ const Stake =({navigation})=>{
 
 
 
-        <View style={{backgroundColor:'#fff',paddingHorizontal:10,paddingVertical:8,marginTop:8}}>
-         <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',marginBottom:15}}>
+        <View style={{backgroundColor:'#fff',paddingVertical:8,marginTop:8}}>
+         <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',marginBottom:15,paddingHorizontal:10}}>
              <Text>DeFacto Official Store</Text>
              <Text style={{fontSize:10,fontWeight:'400',letterSpacing:0.1,color:'red'}}>SEE ALL</Text>
          </View>
@@ -271,9 +271,10 @@ const Stake =({navigation})=>{
            <View style={styles.container9}>
                <View style={{alignItems:'center',marginBottom:10}}>
                    <Image source={term.img} style={{width:150,height:150}} resizeMode='contain'/>
-                   <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                  
                </View>
                <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
+               <Ionicons name="heart-outline" size={20} color="#28b67d" />
                <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
                <Text styles={{fontWeight:'400',marginBottom:3}}>₦3,750</Text>
                <View style={{flexDirection:'row'}}><Text style={styles.container11}>₦3900</Text><Text  style={styles.container10}>-54%</Text></View>
@@ -299,9 +300,10 @@ const Stake =({navigation})=>{
            <View style={styles.container9}>
               <View style={{alignItems:'center',marginBottom:10}}>
                  <Image source={term.img1} style={{width:150,height:150}} resizeMode='contain'/>
-                 <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                
               </View>
               <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
+              <Ionicons name="heart-outline" size={20} color="#28b67d" />
               <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
               <Text styles={{fontWeight:'400',marginBottom:3}}>₦2,750</Text>
               <View style={{flexDirection:'row'}}><Text style={styles.container11}>₦3900</Text><Text style={styles.container10}>-54%</Text></View>

@@ -1,5 +1,5 @@
-import React from 'react';
-import {View,Text,StyleSheet,Image,SafeAreaView, Pressable, ScrollView} from 'react-native';
+import React,{useState} from 'react';
+import {View,Text,StyleSheet,Image,SafeAreaView, Pressable, ScrollView, TouchableOpacity} from 'react-native';
 import {Ionicons } from 'react-native-vector-icons';
 
 const SectionHomeView1=({navigation})=>{
@@ -7,6 +7,23 @@ const SectionHomeView1=({navigation})=>{
     const homeBack =()=>{
         navigation.goBack()
     }
+
+  const [count,setCount]= useState(0);
+
+  const onPress =()=>{
+      setCount(add(5,6))
+      navigation.navigate('City3')
+  }
+
+   const add=(a,c)=>{
+     let d = a * c
+    return(
+        d
+         
+        )
+      
+   }
+
     return(
         <SafeAreaView>
             <View style={styles.container}>
@@ -133,11 +150,12 @@ const SectionHomeView1=({navigation})=>{
            <View style={styles.container21}>
                <View style={{alignItems:'center',marginBottom:10}}>
                    <Image source={require('../assets/samp.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                   <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                  
                </View>
                <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-               <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
-               <Text styles={{fontWeight:'400',marginBottom:3}}>₦3,750</Text>
+               <Ionicons name="heart-outline" size={20} color="#28b67d" />
+               <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+               <Text styles={{fontWeight:'400',marginBottom:3}}>₦3,7{count}</Text>
                <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text  style={styles.container22}>-54%</Text></View>
 
                <View style={{flexDirection:'row',marginTop:5,alignItems:'center',marginBottom:5}}>
@@ -154,17 +172,20 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
            <View style={styles.container21}>
               <View style={{alignItems:'center',marginBottom:10}}>
                  <Image source={require('../assets/samp1.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                 <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                 
               </View>
               <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-              <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+              <Ionicons name="heart-outline" size={20} color="#28b67d" />
+              <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
               <Text styles={{fontWeight:'400',marginBottom:3}}>₦2,750</Text>
               <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text style={styles.container22}>-54%</Text></View>
 
@@ -182,9 +203,11 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
        </View>
        </View>
@@ -194,10 +217,11 @@ const SectionHomeView1=({navigation})=>{
            <View style={styles.container21}>
                <View style={{alignItems:'center',marginBottom:10}}>
                    <Image source={require('../assets/samp2.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                   <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                  
                </View>
                <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-               <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+               <Ionicons name="heart-outline" size={20} color="#28b67d" />
+               <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
                <Text styles={{fontWeight:'400',marginBottom:3}}>₦3,750</Text>
                <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text  style={styles.container22}>-54%</Text></View>
 
@@ -215,17 +239,20 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
            <View style={styles.container21}>
               <View style={{alignItems:'center',marginBottom:10}}>
                  <Image source={require('../assets/samp3.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                 <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                
               </View>
               <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-              <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+              <Ionicons name="heart-outline" size={20} color="#28b67d" />
+              <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
               <Text styles={{fontWeight:'400',marginBottom:3}}>₦2,750</Text>
               <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text style={styles.container22}>-54%</Text></View>
 
@@ -243,9 +270,11 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
        </View>
        </View>
@@ -255,10 +284,11 @@ const SectionHomeView1=({navigation})=>{
            <View style={styles.container21}>
                <View style={{alignItems:'center',marginBottom:10}}>
                    <Image source={require('../assets/samp4.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                   <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                  
                </View>
                <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-               <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+               <Ionicons name="heart-outline" size={20} color="#28b67d" />
+               <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
                <Text styles={{fontWeight:'400',marginBottom:3}}>₦3,750</Text>
                <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text  style={styles.container22}>-54%</Text></View>
 
@@ -276,17 +306,20 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
            <View style={styles.container21}>
               <View style={{alignItems:'center',marginBottom:10}}>
                  <Image source={require('../assets/samp5.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                 <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                 
               </View>
               <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-              <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+              <Ionicons name="heart-outline" size={20} color="#28b67d" />
+              <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
               <Text styles={{fontWeight:'400',marginBottom:3}}>₦2,750</Text>
               <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text style={styles.container22}>-54%</Text></View>
 
@@ -304,9 +337,11 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
        </View>
        </View>
@@ -318,10 +353,11 @@ const SectionHomeView1=({navigation})=>{
            <View style={styles.container21}>
                <View style={{alignItems:'center',marginBottom:10}}>
                    <Image source={require('../assets/samp6.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                   <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                  
                </View>
                <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-               <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+               <Ionicons name="heart-outline" size={20} color="#28b67d" />
+               <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
                <Text styles={{fontWeight:'400',marginBottom:3}}>₦3,750</Text>
                <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text  style={styles.container22}>-54%</Text></View>
 
@@ -339,17 +375,21 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
            <View style={styles.container21}>
               <View style={{alignItems:'center',marginBottom:10}}>
                  <Image source={require('../assets/samp7.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                 <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                 
               </View>
               <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-              <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+              <Ionicons name="heart-outline" size={20} color="#28b67d" />
+              <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
               <Text styles={{fontWeight:'400',marginBottom:3}}>₦2,750</Text>
               <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text style={styles.container22}>-54%</Text></View>
 
@@ -367,9 +407,11 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
        </View>
        </View>
@@ -380,10 +422,11 @@ const SectionHomeView1=({navigation})=>{
            <View style={styles.container21}>
                <View style={{alignItems:'center',marginBottom:10}}>
                    <Image source={require('../assets/samp8.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                   <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                   
                </View>
                <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-               <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+               <Ionicons name="heart-outline" size={20} color="#28b67d" />
+               <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
                <Text styles={{fontWeight:'400',marginBottom:3}}>₦3,750</Text>
                <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text  style={styles.container22}>-54%</Text></View>
 
@@ -401,17 +444,20 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
            <View style={styles.container21}>
               <View style={{alignItems:'center',marginBottom:10}}>
                  <Image source={require('../assets/samp9.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                 <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                
               </View>
               <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-              <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+              <Ionicons name="heart-outline" size={20} color="#28b67d" />
+              <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
               <Text styles={{fontWeight:'400',marginBottom:3}}>₦2,750</Text>
               <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text style={styles.container22}>-54%</Text></View>
 
@@ -429,9 +475,11 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
        </View>
        </View>
@@ -442,10 +490,11 @@ const SectionHomeView1=({navigation})=>{
            <View style={styles.container21}>
                <View style={{alignItems:'center',marginBottom:10}}>
                    <Image source={require('../assets/samp10.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                   <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                  
                </View>
                <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-               <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+               <Ionicons name="heart-outline" size={20} color="#28b67d" />
+               <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
                <Text styles={{fontWeight:'400',marginBottom:3}}>₦3,750</Text>
                <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text  style={styles.container22}>-54%</Text></View>
 
@@ -463,17 +512,20 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
            <View style={styles.container21}>
               <View style={{alignItems:'center',marginBottom:10}}>
                  <Image source={require('../assets/samp11.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                 <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                
               </View>
               <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-              <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+              <Ionicons name="heart-outline" size={20} color="#28b67d" />
+              <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
               <Text styles={{fontWeight:'400',marginBottom:3}}>₦2,750</Text>
               <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text style={styles.container22}>-54%</Text></View>
 
@@ -491,9 +543,11 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
        </View>
        </View>
@@ -505,10 +559,11 @@ const SectionHomeView1=({navigation})=>{
            <View style={styles.container21}>
                <View style={{alignItems:'center',marginBottom:10}}>
                    <Image source={require('../assets/samp12.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                   <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                  
                </View>
                <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-               <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+               <Ionicons name="heart-outline" size={20} color="#28b67d" />
+               <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
                <Text styles={{fontWeight:'400',marginBottom:3}}>₦3,750</Text>
                <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text  style={styles.container22}>-54%</Text></View>
 
@@ -526,17 +581,20 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
            <View style={styles.container21}>
               <View style={{alignItems:'center',marginBottom:10}}>
                  <Image source={require('../assets/samp13.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                 <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                 
               </View>
               <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-              <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+              <Ionicons name="heart-outline" size={20} color="#28b67d" />
+              <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
               <Text styles={{fontWeight:'400',marginBottom:3}}>₦2,750</Text>
               <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text style={styles.container22}>-54%</Text></View>
 
@@ -554,9 +612,11 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
        </View>
        </View>
@@ -568,10 +628,11 @@ const SectionHomeView1=({navigation})=>{
            <View style={styles.container21}>
                <View style={{alignItems:'center',marginBottom:10}}>
                    <Image source={require('../assets/samp2.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                   <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                   
                </View>
                <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-               <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+               <Ionicons name="heart-outline" size={20} color="#28b67d" />
+               <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
                <Text styles={{fontWeight:'400',marginBottom:3}}>₦3,750</Text>
                <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text  style={styles.container22}>-54%</Text></View>
 
@@ -589,17 +650,20 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
            <View style={styles.container21}>
               <View style={{alignItems:'center',marginBottom:10}}>
                  <Image source={require('../assets/samp1.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                 <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                
               </View>
               <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-              <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+              <Ionicons name="heart-outline" size={20} color="#28b67d" />
+              <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
               <Text styles={{fontWeight:'400',marginBottom:3}}>₦2,750</Text>
               <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text style={styles.container22}>-54%</Text></View>
 
@@ -617,9 +681,11 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
        </View>
        </View>
@@ -630,10 +696,11 @@ const SectionHomeView1=({navigation})=>{
            <View style={styles.container21}>
                <View style={{alignItems:'center',marginBottom:10}}>
                    <Image source={require('../assets/samp.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                   <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                  
                </View>
                <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-               <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+               <Ionicons name="heart-outline" size={20} color="#28b67d" />
+               <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
                <Text styles={{fontWeight:'400',marginBottom:3}}>₦3,750</Text>
                <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text  style={styles.container22}>-54%</Text></View>
 
@@ -651,17 +718,20 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
            <View style={styles.container21}>
               <View style={{alignItems:'center',marginBottom:10}}>
                  <Image source={require('../assets/samp6.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                 <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                
               </View>
               <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-              <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+              <Ionicons name="heart-outline" size={20} color="#28b67d" />
+              <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
               <Text styles={{fontWeight:'400',marginBottom:3}}>₦2,750</Text>
               <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text style={styles.container22}>-54%</Text></View>
 
@@ -679,9 +749,11 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
        </View>
        </View>
@@ -692,10 +764,11 @@ const SectionHomeView1=({navigation})=>{
            <View style={styles.container21}>
                <View style={{alignItems:'center',marginBottom:10}}>
                    <Image source={require('../assets/samp10.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                   <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                  
                </View>
                <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-               <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+               <Ionicons name="heart-outline" size={20} color="#28b67d" />
+               <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
                <Text styles={{fontWeight:'400',marginBottom:3}}>₦3,750</Text>
                <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text  style={styles.container22}>-54%</Text></View>
 
@@ -713,17 +786,20 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
            <View style={styles.container21}>
               <View style={{alignItems:'center',marginBottom:10}}>
                  <Image source={require('../assets/samp11.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                 <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                 
               </View>
               <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-              <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+              <Ionicons name="heart-outline" size={20} color="#28b67d" />
+              <Text  numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
               <Text styles={{fontWeight:'400',marginBottom:3}}>₦2,750</Text>
               <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text style={styles.container22}>-54%</Text></View>
 
@@ -741,9 +817,11 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
        </View>
        </View>
@@ -754,10 +832,11 @@ const SectionHomeView1=({navigation})=>{
            <View style={styles.container21}>
                <View style={{alignItems:'center',marginBottom:10}}>
                    <Image source={require('../assets/samp13.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                   <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                  
                </View>
                <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-               <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+               <Ionicons name="heart-outline" size={20} color="#28b67d" />
+               <Text  numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
                <Text styles={{fontWeight:'400',marginBottom:3}}>₦3,750</Text>
                <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text  style={styles.container22}>-54%</Text></View>
 
@@ -775,17 +854,20 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
            <View style={styles.container21}>
               <View style={{alignItems:'center',marginBottom:10}}>
                  <Image source={require('../assets/samp8.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                 <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                 
               </View>
               <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-              <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+              <Ionicons name="heart-outline" size={20} color="#28b67d" />
+              <Text  numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
               <Text styles={{fontWeight:'400',marginBottom:3}}>₦2,750</Text>
               <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text style={styles.container22}>-54%</Text></View>
 
@@ -803,9 +885,11 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
        </View>
        </View>
@@ -816,10 +900,11 @@ const SectionHomeView1=({navigation})=>{
            <View style={styles.container21}>
                <View style={{alignItems:'center',marginBottom:10}}>
                    <Image source={require('../assets/samp5.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                   <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                   
                </View>
                <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-               <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+               <Ionicons name="heart-outline" size={20} color="#28b67d" />
+               <Text  numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
                <Text styles={{fontWeight:'400',marginBottom:3}}>₦3,750</Text>
                <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text  style={styles.container22}>-54%</Text></View>
 
@@ -837,17 +922,20 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
            <View style={styles.container21}>
               <View style={{alignItems:'center',marginBottom:10}}>
                  <Image source={require('../assets/col.jpg')} style={{width:150,height:150}} resizeMode='contain'/>
-                 <Ionicons name="heart-outline" size={20} color="#28b67d" style={{position:'absolute',bottom:0,left:0}}/>
+                
               </View>
               <Text style={{position:'absolute',fontSize:10,padding:3,backgroundColor:'black',color:'#fff',top:7,left:5,fontWeight:"500",letterSpacing:0.2}}>Black Friday Deals</Text>
-              <Text style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
+              <Ionicons name="heart-outline" size={20} color="#28b67d" />
+              <Text numberOfLines={1} style={{fontSize:11,fontWeight:'300',marginBottom:3}}>Skyrun Double Door Top Mount...</Text>
               <Text styles={{fontWeight:'400',marginBottom:3}}>₦2,750</Text>
               <View style={{flexDirection:'row'}}><Text style={styles.container23}>₦3900</Text><Text style={styles.container22}>-54%</Text></View>
 
@@ -865,9 +953,11 @@ const SectionHomeView1=({navigation})=>{
                    <Text style={{fontSize:13,marginLeft:3,color:'#28b67d'}}>EXPRESS</Text>
                </View>
                <View style={{flexDirection:'row'}}><Text style={{fontSize:10,fontWeight:'400'}}>Eligible for </Text><Text style={{marginLeft:4,fontSize:10,fontWeight:'700',letterSpacing:0.1}}>Free Shipping</Text></View>
+               <TouchableOpacity activeOpacity={0.7} >
               <View style={styles.container4}>
                   <Text style={{color:'#fff',fontSize:12,fontWeight:'700'}}>ADD TO CART</Text>
               </View>
+              </TouchableOpacity>
            </View>
        </View>
        </View>
@@ -888,7 +978,8 @@ const styles = StyleSheet.create({
         paddingVertical:12,
         flexDirection:"row",
         justifyContent:'space-between',
-        alignItems:'center'
+        alignItems:'center',
+        marginBottom:5
     },
     container1:{
         width:140,

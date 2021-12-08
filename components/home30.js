@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text,StyleSheet,Pressable,SafeAreaView, ScrollView,Image, TouchableOpacity, TouchableNativeFeedback} from 'react-native';
+import {View,Text,StyleSheet,Pressable,SafeAreaView, ScrollView,Image} from 'react-native';
 import {Ionicons } from 'react-native-vector-icons';
 import { 
     Roboto_100Thin,
@@ -36,7 +36,7 @@ import {
    
      const outPut1 =[{id:1,service:require('../assets/pw.png'),service1:require('../assets/pw1.png'),service2:require('../assets/pw2.png'),},{id:1,service:require('../assets/pw4.png'),service1:require('../assets/pw5.png'),service2:require('../assets/pw6.png')},{id:1,service:require('../assets/pw7.png'),service1:require('../assets/pw8.png'),service2:require('../assets/pw9.png')},{id:1,service:require('../assets/pw.png'),service1:require('../assets/pw1.png'),service2:require('../assets/pw2.png')}]
 
-const Stake5 =({navigation})=>{
+const Slade =({navigation})=>{
 
     const homeBack5 =()=>{
         navigation.goBack()
@@ -68,7 +68,7 @@ const Stake5 =({navigation})=>{
         <View style={styles.container}>
            <View style={{flexDirection:'row',alignItems:'center'}}>
               <Pressable onPress={homeBack5}><Ionicons name="arrow-back-sharp" size={22} color="#fff" style={{marginLeft:5}}/></Pressable>
-              <Text style={{marginLeft:14,fontSize:16,fontWeight:'700',letterSpacing:0.1,color:'#fff'}}>EGORAS Market</Text>
+              <Text style={{marginLeft:14,fontSize:16,fontWeight:'700',letterSpacing:0.1,color:'#fff'}}>EGORAS Stock Sales</Text>
            </View>
           <View style={{flexDirection:'row',alignItems:'center'}}>
              <Ionicons name="md-search" size={18} color="#fff" />
@@ -77,88 +77,18 @@ const Stake5 =({navigation})=>{
     </View>
 
     <ScrollView showsVerticalScrollIndicator={false}>
-        <View style={[styles.container1,styles.container3]}>
+        {/* <View style={[styles.container1,styles.container3]}>
             <View style={{flex:1}}><Image source={require('../assets/orange.png')}  style={{height:160,width:'100%'}} resizeMode="contain" /></View>
             <View style={{flex:1}} ><Image source={require('../assets/orange1.png')} style={{height:160,width:'100%'}}  resizeMode="contain" /></View>
-        </View>
-
+        </View> */}
+{/* 
         <View style={[styles.container1,styles.container2]}>
             <View style={{flex:1}}><Image source={require('../assets/orange2.png')}  style={{height:90,width:'100%'}} resizeMode="contain" /></View>
             <View style={{flex:1}} ><Image source={require('../assets/orange3.jpg')} style={{height:90,width:'100%'}}  resizeMode="contain" /></View>
-        </View>
+        </View> */}
 
 
-      <View style={{paddingHorizontal:8,paddingTop:10,paddingBottom:1}}>
-          <View style={{backgroundColor:'#fff'}}>
-              <View style={{flexDirection:'row',justifyContent:'space-between'}}>
-                  <View style={styles.container14}>
-                        <Text  style={{fontSize:11,fontWeight:'500',letterSpacing:0.1,color:'#000'}}>06.00pm</Text>
-                        <Text  style={{fontSize:9,fontWeight:'300',letterSpacing:0.1,color:'#000'}}>Today</Text>
-                  </View>
-                  <View style={styles.container14}>
-                        <Text style={{fontSize:11,fontWeight:'500',letterSpacing:0.1,color:'#000'}}>12.00pm</Text>
-                        <Text style={{fontSize:9,fontWeight:'300',letterSpacing:0.1,color:'#000'}}>wed Dec 15</Text>
-                  </View>
-                  <View style={styles.container14}>
-                        <Text style={{fontSize:11,fontWeight:'500',letterSpacing:0.1,color:'#000'}}>06.00pm</Text>
-                        <Text style={{fontSize:9,fontWeight:'300',letterSpacing:0.1,color:'#000'}}>wed Dec 15</Text>
-                  </View>
-                  <View style={styles.container14}>
-                       <Text style={{fontSize:11,fontWeight:'500',letterSpacing:0.1,color:'#000'}}>12.00pm</Text>
-                       <Text style={{fontSize:9,fontWeight:'300',letterSpacing:0.1,color:'#000'}}>Today</Text>
-                  </View>
-              </View>
-              <Text style={{fontSize:11,fontWeight:'400',marginTop:20,paddingHorizontal:10,marginBottom:5,color:'#000'}}>Starts in 06d : 20h : 54m</Text>
-          </View>
-      </View>
-
-
-        <View style={{paddingTop:10,paddingHorizontal:8,paddingBottom:0}}>
-            <View style={styles.container13}>
-               <View style={{flexDirection:'row'}}>
-                  <View>
-                     <Image source={require('../assets/apple3.jpg')} style={{width:150,height:150}} resizeMode='contain' />
-                     <View style={{width:40,padding:3,borderRadius:10,backgroundColor:'#28b67d',position:'absolute',bottom:0,alignItems:'center'}}><Text style={{color:'#fff',fontSize:10,fontWeight:'600',}}>1 unit</Text></View>
-                  </View>
-                  <View >
-                      <View style={{marginLeft:10,marginTop:40}}>
-                        <Text style={{fontSize:12,color:'#000',fontWeight:'300'}}>NGN 200k Voucher</Text>
-                        <Text style={{fontSize:13,color:'#000',fontWeight:'500',marginBottom:10}}>₦ 2,030</Text>
-                       <Text style={{fontSize:12,color:'#000',fontWeight:'400'}}>Search:</Text>
-                       <Text style={{fontSize:13,color:'#000',fontWeight:'400'}}>Home $ Kitchen</Text>
-                      </View>
-                  </View>
-              </View>
-            <TouchableOpacity activeOpacity={0.5} ><View style={{width:70,paddingVertical:6,paddingHorizontal:5,borderRadius:3,backgroundColor:'#28b67d',alignItems:'center'}}><Text style={{color:'#fff',fontSize:13}}>HUNT</Text></View></TouchableOpacity>
-            </View>
-      </View>
-
-
-      <View style={{paddingVertical:10,paddingHorizontal:8}}>
-            <View style={styles.container13}>
-               <View style={{flexDirection:'row'}}>
-                  <View>
-                     <Image source={require('../assets/apple.jpg')} style={{width:150,height:150}} resizeMode='contain' />
-                     <View style={{width:40,padding:3,borderRadius:10,backgroundColor:'#e4a788',position:'absolute',bottom:0,alignItems:'center'}}><Text style={{color:'#fff',fontSize:10,fontWeight:'600',}}>1 unit</Text></View>
-                  </View>
-                  <View >
-                      <View style={{marginLeft:10,marginTop:40}}>
-                        <Text style={{fontSize:12,color:'#000',fontWeight:'300'}}>NGN 200k Voucher</Text>
-                        <Text style={{fontSize:13,color:'#000',fontWeight:'500',marginBottom:10}}>₦ 2000</Text>
-                       <Text style={{fontSize:12,color:'#000',fontWeight:'400'}}>Search:</Text>
-                       <Text style={{fontSize:13,color:'#000',fontWeight:'400'}}>Home $ Kitchen</Text>
-                      </View>
-                  </View>
-              </View>
-            <TouchableOpacity activeOpacity={0.5} ><View style={{width:70,paddingVertical:6,paddingHorizontal:5,borderRadius:3,backgroundColor:'#e4a788',alignItems:'center'}}><Text style={{color:'#fff',fontSize:13}}>HUNT</Text></View></TouchableOpacity>
-            </View>
-      </View>
-
-
-
-
-
-       <View style={{backgroundColor:'#fff',paddingVertical:8}}>
+       <View style={{backgroundColor:'#fff',paddingHorizontal:10,paddingVertical:8}}>
            <Text style={{marginBottom:7}}>Top Deals</Text>
          <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false}> 
               {outPut.map((imt)=>{
@@ -270,7 +200,7 @@ const Stake5 =({navigation})=>{
         </View>
 
       </View> */}
-     
+{/*      
      <View style={{backgroundColor:'#fff',paddingVertical:8,marginTop:8}}>
          <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',marginBottom:15,paddingHorizontal:10}}>
              <Text>Adidas Official Store</Text>
@@ -292,10 +222,46 @@ const Stake5 =({navigation})=>{
          
             }
             </ScrollView>
-        </View>
+        </View> */}
 
 
 
+        {/* <View style={{backgroundColor:'#fff',paddingVertical:8,marginTop:8}}>
+         <View style={{flexDirection:'row',alignItems:'center',justifyContent:'space-between',marginBottom:15,paddingHorizontal:10}}>
+             <Text>DeFacto Official Store</Text>
+             <Text style={{fontSize:10,fontWeight:'400',letterSpacing:0.1,color:'red'}}>SEE ALL</Text>
+         </View>
+          
+         <ScrollView horizontal pagingEnabled showsHorizontalScrollIndicator={false}> 
+              {outPut2.map((imt5)=>{
+
+              return(
+                <View style={styles.container4}>
+                <Image source={imt5.img} resizeMode="contain" style={{width:'100%',height:120,marginBottom:15}}/>
+                <Text numberOfLines={1} style={{fontSize:12,fontWeight:'300',letterSpacing:0.1,textAlign:'left',marginBottom:5}}>UMIDIGI A9 Andriod 11fg ghiofrd  </Text>
+                <Text style={{fontSize:11,fontWeight:'bold',letterSpacing:0.1}}>₦ {imt5.text1}</Text>
+                <Text style={styles.container5}>{imt5.text}</Text>
+            </View>
+              )
+           })
+         
+            }
+            </ScrollView>
+        </View> */}
+
+        <View style={styles.container8}>
+
+<View style={{width:'10%',paddingRight:3,borderRightWidth:1,borderRightColor:'#fff',paddingVertical:10}}>
+    <Ionicons name="business" size={22} color="#fff" />
+</View>
+<View style={{width:'45%',flexDirection:'row',alignItems:'center',paddingRight:4,borderRightWidth:1,borderRightColor:'#fff',paddingVertical:10,justifyContent:'flex-end'}}>
+     <Text style={{fontSize:14,color:'#fff',fontWeight:'600'}}>POPULARITY</Text>
+     <Ionicons name="chevron-down-outline" size={22} color="#fff" style={{marginLeft:20}}/>
+</View>
+<View style={{width:'45%',paddingVertical:10,alignItems:'center'}}>
+    <Text style={{color:'#fff',fontSize:14,fontWeight:'600'}}>FILTERS</Text>
+</View>
+</View>
 
 
 
@@ -489,34 +455,9 @@ container12:{
      elevation:1,
      shadowOpacity:0.8,
      backgroundColor:'#28b67d',
-},
-container13:{
-    shadowRadius:8,
-    shadowColor:'#f5f3f3',
-    shadowOffset:{width:0,height:2},
-    elevation:1,
-    shadowOpacity:0.8,
-    backgroundColor:'#fff',
-    padding:5,
-    borderRadius:3,
-    flexDirection:'row',
-    justifyContent:'space-between',
-    alignItems:'baseline'
-},
-container14:{
-    backgroundColor:'#fff',width:'24%',
-    shadowRadius:8,
-    shadowColor:'#dadde1',
-    shadowOffset:{width:0,height:2},
-    elevation:1,
-    shadowOpacity:0.8,
-    paddingTop:5,
-    paddingBottom:4,
-    alignItems:'center'
 }
-
-
+// co
 
 })
 
-export default Stake5;
+export default Slade;
