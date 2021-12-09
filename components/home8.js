@@ -129,7 +129,10 @@ const color ={
                <Search1/>
             
                    <View  style={{flexDirection:'row'}}>
+
+                      
                       <View style={styles.container2}>
+                      <ScrollView showsVerticalScrollIndicator={false}>
                       <Pressable onPress={send1}><View  style={speed === 'bouy'? color : styles.container1 } testID='bouy'><Text style={styles.yam}>Grocery</Text></View></Pressable>
                       <Pressable onPress={send}><View style={speed === 'bouy1'? color : styles.container1} testID='bouy1'><Text style={styles.yam}>Health & Beauty</Text></View></Pressable>
                        <Pressable onPress={send2}><View style={speed === 'bouy2'? color :styles.container1} testID='bouy2'><Text  style={styles.yam}>Home & Office</Text></View></Pressable>
@@ -142,6 +145,7 @@ const color ={
                        <Pressable  onPress={send9}><View style={speed === 'bouy9'? color :styles.container1} testID='bouy9'><Text style={styles.yam}>Gaming</Text></View></Pressable>
                        <Pressable onPress={send10}><View style={speed === 'bouy10'? color :styles.container1} testID='bouy10'><Text  style={styles.yam} >Sporting & Goods</Text></View></Pressable>
                        <Pressable onPress={send11}><View style={speed === 'bouy11'? color :styles.container1} testID='bouy11'><Text  style={styles.yam} >Automobile</Text></View></Pressable>
+                       </ScrollView>
                       </View>
 
 

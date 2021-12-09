@@ -12,6 +12,12 @@ import Screen6 from './components/home27';
 import Screen7 from './components/home28';
 import Screen8 from './components/home9';
 import Screen9 from './components/home30';
+import Screen10 from './components/orderp';
+import Screen11 from './components/createAccount';
+import Screen12 from './components/search';
+import Screen13 from './components/egoras_M_Services';
+import Screen14 from './components/topdeals';
+import Screen15 from './components/details';
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +34,13 @@ export default function App() {
         <Stack.Screen name="City4" component={Screen7} options={{ headerShown:false }}  />
         <Stack.Screen name="City5" component={Screen8} options={{ headerShown:false }}  />
         <Stack.Screen name="City6" component={Screen9} options={{ headerShown:false }}  />
+        <Stack.Screen name="Order" component={Screen10} options={{ headerShown:false }}  />
+        <Stack.Screen name="createAccount" component={Screen11} options={{ headerShown:false }}  />
+        <Stack.Screen name="search" component={Screen12} options={{ headerShown:false }}  />
+        <Stack.Screen name="egoras-m-services" component={Screen13} options={{ headerShown:false }}  />
+        <Stack.Screen name="topdeals" component={Screen14} options={{ headerShown:false }}  />
+        <Stack.Screen name="details" component={Screen15} options={{ headerShown:false }}  />
+
       </Stack.Navigator>
     </NavigationContainer>
   );

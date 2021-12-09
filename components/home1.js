@@ -250,10 +250,12 @@ const carl =({navigation})=>{
                  <View style={styles.container4}>
 
              <View style={{flexDirection:'row',marginBottom:20,justifyContent:'space-around',alignItems:'center'}}>
-                 <View style={{width:80,alignItems:'center'}}>
-                     <Image source={require('../assets/black.png')} style={styles.container3} />
-                     <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Top Deals</Text>
-                 </View>
+                 <Pressable onPress={()=>navigation.navigate('topdeals')}>
+                       <View style={{width:80,alignItems:'center'}}>
+                       <Image source={require('../assets/black.png')} style={styles.container3} />
+                       <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Top Deals</Text>
+                   </View>
+                 </Pressable>
                  <View style={{width:80,alignItems:'center'}}>
                      <Image source={require('../assets/black2.png')} style={styles.container3} />
                      <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Brand Day</Text>
