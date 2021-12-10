@@ -1,13 +1,15 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React ,{useState} from 'react';
-import {View,Text,StyleSheet,SafeAreaView,Platform,Modal,Alert,Pressable, TextInput,TouchableOpacity} from 'react-native';
+import {View,Text,StyleSheet,SafeAreaView,Platform,Modal,Alert,Pressable, TextInput,TouchableOpacity, ScrollView} from 'react-native';
 import {Ionicons } from 'react-native-vector-icons';
 import {AntDesign } from 'react-native-vector-icons';
 
 export default function wat6({navigation}){
    
      const [wide3,setWide] = useState(false);
-     const [open,setOpen]=useState(false)
+     const [open,setOpen]=useState(false);
+
+   
 
     return(
         <SafeAreaView style={styles.container}>
@@ -38,7 +40,7 @@ export default function wat6({navigation}){
                             <View style={{alignItems:'flex-end'}}><Text style={{fontSize:9,marginTop:9,color:'#000'}}>0</Text></View>
                             <TextInput placeholder="Last name*" style={{paddingVertical:10,borderBottomColor:'#000',borderBottomWidth:0.2}}/>
                             <View style={{alignItems:'flex-end'}}><Text style={{fontSize:9,marginTop:9,color:'#000'}}>0</Text></View>
-                            <TextInput placeholder="Email" style={{paddingVertical:10,borderBottomColor:'#000',borderBottomWidth:0.2}}/>
+                            <TextInput placeholder="Email" style={{paddingVertical:10,borderBottomColor:'#000',borderBottomWidth:0.2}} keyboardType="email-address"/>
                             <View style={{alignItems:'flex-end'}}><Text style={{fontSize:9,marginTop:9,color:'#000'}}>0</Text></View>
 
                             <Text style={{fontSize:12,marginTop:12,color:'#000000',fontWeight:'300' }}>Chat Contact Reasons*</Text>
@@ -62,7 +64,7 @@ export default function wat6({navigation}){
                               
                           </View>
                           
-                          <TextInput placeholder="Email" style={{paddingVertical:10,borderBottomColor:'#000',borderBottomWidth:0.2,marginTop:12}}/>
+                          <TextInput placeholder="Order number" style={{paddingVertical:10,borderBottomColor:'#000',borderBottomWidth:0.2,marginTop:12}}/>
                           <View style={{alignItems:'flex-end'}}><Text style={{fontSize:9,marginTop:9,color:'#000'}}>0</Text></View>
 
                          </View>
@@ -73,6 +75,17 @@ export default function wat6({navigation}){
                   </View>
                </View>
            </Modal> 
+
+            
+
+    
+
+
+
+
+
+
+
 
             <View style={styles.container1}>
                <Text style={{color:'#fff',fontWeight:'700',letterSpacing:0.3,fontSize:18}}>Help</Text>

@@ -223,6 +223,7 @@ const carl =({navigation})=>{
              <FlatList  data={data}
              horizontal
              pagingEnabled
+             showsHorizontalScrollIndicator={false}
             //    keyExtractor={(_,index)=>index.toString()}
                keyExtractor={(item)=>item.id}
                renderItem={({item})=>{
@@ -308,6 +309,7 @@ const carl =({navigation})=>{
          renderItem={renderItem}
           keyExtractor={item => item.id}
          horizontal
+         showsHorizontalScrollIndicator={false}
          />
    </SafeAreaView> 
    </View>
