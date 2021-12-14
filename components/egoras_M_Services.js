@@ -462,7 +462,7 @@ const  dend = require('../assets/sand.mp4');
                      Div.map((letter)=>{
                          return(
                             <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',marginBottom:20}} key={letter.id}>
-                            <Pressable onPress={()=>navigation.navigate('drawer1')}>
+                            <Pressable onPress={()=>setWide4(!wide4)}>
                                 <View style={{flexDirection:'row',alignItems:'center'}}>
                                    {/* <Feather name="mail" size={22} color="#28b67d"  /> */}
                                    <View style={{width:20,height:20,borderRadius:50,backgroundColor:'#28b67d',justifyContent:'center',alignItems:'center'}}>

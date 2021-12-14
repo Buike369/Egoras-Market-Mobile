@@ -32,7 +32,7 @@ export default function desk({navigation}){
            navigation.navigate('Home1')
        }
     return(
-        <ImageBackground source={require('../assets/pic.png')} style={styles.image} resizeMethod="resize">
+        <ImageBackground source={require('../assets/pic.png')} style={styles.image} resizeMode="cover">
             <Pressable onPress={way} style={styles.container}>
               <View  style={{alignItems:'center'}}>
                  <Image source={require('../assets/egoras-favicon.png')} style={styles.tet} />
@@ -46,14 +46,16 @@ export default function desk({navigation}){
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+     
         alignItems: 'center',
-        justifyContent: 'center',
+      
+         justifyContent: 'center',
       },
       image:{
         flex:1,
-        width:'100%',
-        height:'100%'
+        alignItems:'center',
+        justifyContent:'center'
+      
       },
       text1:{
         fontSize:40,
