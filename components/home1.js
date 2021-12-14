@@ -1,6 +1,7 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {View,Text,FlatList,Image,Animated,Dimensions,StyleSheet,TouchableOpacity,TextInput,SafeAreaView, ScrollView, ImageBackground, VirtualizedList, Pressable,Platform,StatusBar} from 'react-native';
 import {Ionicons } from 'react-native-vector-icons';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 import Search from './home7';
 import { 
     Roboto_100Thin,
@@ -33,27 +34,27 @@ const windowWidth = Dimensions.get('window').width;
 const DATA = [
     {
       id: 1,
-      img1: require("../assets/col.jpg"),
+      img1: require("../assets/skip5.jpg"),
      
     },
     {
       id: 2,
-      img1: require("../assets/col.jpg"),
+      img1: require("../assets/skip.jpg"),
    
     },
     {
         id: 3,
-        img1: require("../assets/col.jpg"),
+        img1: require("../assets/skip1.jpg"),
        
     },
     {
         id: 4,
-        img1: require("../assets/col.jpg"),
+        img1: require("../assets/skip3.jpg"),
       
     },
     {
         id: 5,
-        img1: require("../assets/col.jpg"),
+        img1: require("../assets/skip2.jpg"),
       
     },
     {
@@ -63,27 +64,27 @@ const DATA = [
     },
     {
         id: 7,
-        img1: require("../assets/col.jpg"),
+        img1: require("../assets/skip.jpg"),
       
     },
     {
         id: 8,
-        img1: require("../assets/col.jpg"),
+        img1: require("../assets/skip3.jpg"),
       
     },
     {
         id: 9,
-        img1: require("../assets/col.jpg"),
+        img1: require("../assets/skip4.jpg"),
       
     },
     {
         id: 10,
-        img1: require("../assets/col.jpg"),
+        img1: require("../assets/skip2.jpg"),
       
     },
     {
         id: 11,
-        img1: require("../assets/col.jpg"),
+        img1: require("../assets/skip1.jpg"),
       
     },
   ];
@@ -135,6 +136,30 @@ const Item = ({img4})=>(
 
 const carl =({navigation})=>{
 
+
+      useEffect(()=>{
+       
+     
+     changeR
+
+      },[])
+
+
+      async function saveNewPerson() {
+        const person = new Parse.Object("Person");
+      
+        person.set("name", "John Snow");
+        person.set("age", 27);
+        try {
+          let result = await person.save()
+          alert('New object created with objectId: ' + result.id);
+          } catch(error) {
+              alert('Failed to create new object, with error code: ' + error.message);
+          }
+        }
+
+     
+
     let [fontsLoaded, error ]=useFonts({
         Roboto_100Thin,
         Roboto_100Thin_Italic,
@@ -173,6 +198,14 @@ const carl =({navigation})=>{
     const data =[{id:2,wan:require('../assets/pad.jpg')}, {id:3,wan:require('../assets/pad2.jpg')},{id:4,wan:require('../assets/pad1.gif')},{id:5,wan:require('../assets/pad3.gif')},{id:6,wan:require('../assets/pad.jpg')}];
     const imageW = width * 1;
     const imageH = (imageW * 0.57)- 5;
+
+
+    const changeR=()=>{
+       let i ;
+        for (i = 0; i < data.wan.lenght; i++){
+            console.log('hello Mr Kingsley');
+        }
+    }
 
 
     const Changes =(item)=>{
@@ -267,27 +300,29 @@ const carl =({navigation})=>{
                  </View>
                  <View style={{width:80,alignItems:'center'}}>
                      <Image source={require('../assets/black3.png')} style={styles.container3} />
-                     <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Egoras Food</Text>
+                     <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Egoras Prime</Text>
                  </View>
              </View>
 
 
              <View style={{flexDirection:'row',justifyContent:'space-around'}}>
                  <View style={{width:80,alignItems:'center'}}>
-                     <Image source={require('../assets/black.png')} style={styles.container3} />
-                     <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Top Deals</Text>
-                 </View>
-                 <View style={{width:80,alignItems:'center'}}>
-                     <Image source={require('../assets/black2.png')} style={styles.container3} />
-                     <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Brand Day</Text>
-                 </View>
-                 <View style={{width:80,alignItems:'center'}}>
                      <Image source={require('../assets/black1.png')} style={styles.container3} />
-                     <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Borrow Money</Text>
+                     <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Flash Sales</Text>
+                 </View>
+                 <Pressable onPress={()=>navigation.navigate('phonestr')}>
+                 <View style={{width:80,alignItems:'center'}}>
+                     <Image source={require('../assets/tu.jpg')} style={styles.container3} />
+                     <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Phones</Text>
+                 </View>
+                 </Pressable>
+                 <View style={{width:80,alignItems:'center'}}>
+                     <Image source={require('../assets/download.jpg')} style={styles.container3} />
+                     <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Foot wears</Text>
                  </View>
                  <View style={{width:80,alignItems:'center'}}>
-                     <Image source={require('../assets/black3.png')} style={styles.container3} />
-                     <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Egoras Food</Text>
+                     <Image source={require('../assets/download-1.jpg')} style={styles.container3} />
+                     <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Sneakers</Text>
                  </View>
              </View>
              </View>

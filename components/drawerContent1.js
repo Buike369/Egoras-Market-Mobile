@@ -1,58 +1,17 @@
-
-import React,{useState} from 'react';
-import {View,Text,StyleSheet, SafeAreaView,Pressable, ScrollView,Modal,Image} from 'react-native';
-import {Ionicons } from 'react-native-vector-icons';
-import {AntDesign } from 'react-native-vector-icons';
-import {Feather } from 'react-native-vector-icons';
-import Video from 'react-native-video';
-import Video1 from './video'
+import React from 'react';
+import {View,Text,StyleSheet, SafeAreaView} from 'react-native';
 
 
-const egoras_M_services =({navigation})=>{
-
-    const [wide4,setWide4] =useState(false);
-    const text1= <Text style={{color:'#28b67d',fontWeight:'700'}}>EGORAS_M</Text>
-          
-        const Div =[{id:1,test1:'Egoras Market Prime'},{id:2,test1:'Pay Airtime & Bills'},{id:3,test1:'Pay Electricity Bills'},{id:4,test1:'Pay Internet Bills'},{id:5,test1:'Buy Data'},{id:6,test1:'Borrow Money'},{id:7,test1:'Egoras Market food'},{id:8,test1:'sell on Egoras Market'},{id:9,test1:'contact Us'}]
-
-
-        const DivCircle = (
-            <View style={{padding:8,borderRadius:100,backgroundColor:'#28b67d'}}>
-                 <Ionicons name="star-sharp" size={20} color="#000" style={{marginLeft:5}}/>
-            </View>
-        )
-
-
-        const tree =()=>{
-            navigation.navigate('drawers');
-            setWide4(!wide4)
-        }
-
-const Swap =[{id:3,img:require('../assets/ant.png')},{id:4,img:require('../assets/ant1.png')}];
-
-const Swap2 =[{id:1,img:require('../assets/ant.png')},{id:2,img:require('../assets/apple3.jpg')},{id:3,img:require('../assets/apple.jpg')},{id:4,img:require('../assets/apple4.jpg')},{id:5,img:require('../assets/ant4.png')},{id:6,img:require('../assets/ant5.png')},{id:7,img:require('../assets/apple5.jpg')},{id:8,img:require('../assets/apple8.jpg')},{id:9,img:require('../assets/apple6.jpg')},{id:10,img:require('../assets/ant1.png')}]
-
-
-
-const output4=[{id:1,img:require('../assets/samp.jpg'),img1:require('../assets/samp1.jpg')},{id:2,img:require('../assets/samp3.jpg'),img1:require('../assets/samp4.jpg')},{id:3,img:require('../assets/samp5.jpg'),img1:require('../assets/samp6.jpg')},
-{id:4,img:require('../assets/samp7.jpg'),img1:require('../assets/samp8.jpg')},{id:5,img:require('../assets/samp9.jpg'),img1:require('../assets/samp10.jpg')},{id:6,img:require('../assets/samp11.jpg'),img1:require('../assets/samp12.jpg')},{id:7,img:require('../assets/samp13.jpg'),img1:require('../assets/samp.jpg')},{id:8,img:require('../assets/samp1.jpg'),img1:require('../assets/samp2.jpg')},{id:9,img:require('../assets/samp3.jpg'),img1:require('../assets/samp4.jpg')},{id:10,img:require('../assets/samp5.jpg'),img1:require('../assets/samp5.jpg')},{id:11,img:require('../assets/samp6.jpg'),img1:require('../assets/samp7.jpg')},{id:12,img:require('../assets/samp8.jpg'),img1:require('../assets/samp9.jpg')},{id:13,img:require('../assets/samp10.jpg'),img1:require('../assets/samp11.jpg')},{id:14,img:require('../assets/samp12.jpg'),img1:require('../assets/samp11.jpg')}]
-
-
-
-const  dend = require('../assets/sand.mp4');
-
+const newWay =()=>{
     return(
-        <SafeAreaView>
-    
+<SafeAreaView>
 
-              
-          
-    <Modal visible={wide4} >
+<View >
                    <View style={{flex:1,backgroundColor:'#d2f0e4',marginTop:50}} testID="were">
 
                        {/* first view header */}
                        <View style={{flexDirection:'row',alignItems:'center',paddingVertical:15,backgroundColor:'#28b67d',paddingHorizontal:10}}>
-                          <Pressable onPress={()=>setWide4(!wide4)}><Ionicons name="close-outline" size={22} color="#fff"  /></Pressable>
+                          <Pressable ><Ionicons name="close-outline" size={22} color="#fff"  /></Pressable>
 
                           <View>
                               <Text style={{marginLeft:20,color:'#fff',fontSize:14,fontWeight:'600'}}><Ionicons name="lock-closed" size={18} color="#fff"/> Egorasmarket.com</Text>
@@ -64,7 +23,7 @@ const  dend = require('../assets/sand.mp4');
 
                         <View style={[styles.container1,styles.container2]}>
                            <View style={{flexDirection:'row',alignItems:'center'}}>
-                              <Pressable onPress={tree}><Ionicons name="menu" size={22} color="#000000"  /></Pressable>
+                              <Pressable onPress={()=>navigation.navigate('drawers')}><Ionicons name="menu" size={22} color="#000000"  /></Pressable>
                                <Text style={{marginLeft:5,fontSize:16,fontWeight:'700',letterSpacing:0.1,color:'#28b67d'}}>EGORAS_M</Text>
                            </View>
                            <View style={{flexDirection:'row',alignItems:'center'}}>
@@ -436,64 +395,14 @@ const  dend = require('../assets/sand.mp4');
 
                    </View>
 
-            </Modal>
-
-
-  
-            <View style={styles.container}>
-                <View style={{flexDirection:'row',alignItems:'center'}}>
-                    <Pressable onPress={()=>navigation.goBack()}><Ionicons name="arrow-back-sharp" size={22} color="#fff" style={{marginLeft:5}}/></Pressable>
-                    <Text style={{marginLeft:14,fontSize:16,fontWeight:'700',letterSpacing:0.1,color:'#fff'}}>Egoras Market Services</Text>
-                </View>
-                <View style={{flexDirection:'row',alignItems:'center'}}>
-                   <Pressable onPress={()=>navigation.navigate('search')}><Ionicons name="md-search" size={18} color="#fff" style={styles.container2}/></Pressable>
-                    <Ionicons name="cart-outline" size={22} color="#fff" style={{marginLeft:5}}/>
-                </View>
             </View>
-            <ScrollView >
-                 <Text style={{PaddingTop:15,paddingHorizontal:10,paddingBottom:10}}>DISCOVER OUR SERVICES</Text>
 
-                 <View style={{paddingHorizontal:5}}> 
-                     <View style={{backgroundColor:'#fff',paddingHorizontal:10,paddingVertical:15}}>
-
-                     
-
-                 {
-                     Div.map((letter)=>{
-                         return(
-                            <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',marginBottom:20}} key={letter.id}>
-                            <Pressable onPress={()=>navigation.navigate('drawer1')}>
-                                <View style={{flexDirection:'row',alignItems:'center'}}>
-                                   {/* <Feather name="mail" size={22} color="#28b67d"  /> */}
-                                   <View style={{width:20,height:20,borderRadius:50,backgroundColor:'#28b67d',justifyContent:'center',alignItems:'center'}}>
-                                       <Ionicons name="star-sharp" size={14} color="#fff" style={{marginLeft:1}} />
-                                   </View>
-                                 
-                                   <Text style={{fontSize:14,fontWeight:'400',letterSpacing:0.1,marginLeft:10,color:'#000'}}>{letter.test1}</Text>
-                                </View>
-                            </Pressable>
-                            <Pressable onPress={()=>setWide4(!wide4)} >
-                                <AntDesign name="right" size={15} color="grey" style={{marginLeft:5}} />
-                            </Pressable>
-                        </View>
-                         )
-                     })
-                 }
-                
-
-                   
-
-
-                     </View>
-                 </View>
-            </ScrollView>
-
-        </SafeAreaView>
+</SafeAreaView>
     )
 }
 
-
 const styles = StyleSheet.create({
+
     container:{
         backgroundColor:'#28b67d',
         paddingHorizontal:10,
@@ -573,7 +482,6 @@ const styles = StyleSheet.create({
     },
 
 
-
 })
 
-export default egoras_M_services;
+export default newWay;

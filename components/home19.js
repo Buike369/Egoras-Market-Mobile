@@ -24,6 +24,23 @@ const SectionHomeView1=({navigation})=>{
       
    }
 
+
+
+
+   async function retrievePerson() {
+    const query = new Parse.Query("Person");
+    
+    try {
+      const person = await query.get("mhPFDlCahj");
+      const name = person.get("name");
+      const age = person.get("age");
+    
+      alert(`Name: ${name} age: ${age}`);
+    } catch (error) {
+      alert(`Failed to retrieve the object, with error code: ${error.message}`);
+    }
+  }  
+
     return(
         <SafeAreaView>
             <View style={styles.container}>

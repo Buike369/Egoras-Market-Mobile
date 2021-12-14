@@ -2,6 +2,8 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import Parse from 'parse/react-native';
 
 import HomeScreen from './components/home';
 import Screen2 from './components/home2';
@@ -18,6 +20,14 @@ import Screen12 from './components/search';
 import Screen13 from './components/egoras_M_Services';
 import Screen14 from './components/topdeals';
 import Screen15 from './components/details';
+// import Screen16 from './components/drawer';
+// import Screen17 from './components/drawer';
+import Screen18 from './components/phones';
+
+
+
+
+Parse.setAsyncStorage(AsyncStorage);
 
 const Stack = createNativeStackNavigator();
 
@@ -40,9 +50,14 @@ export default function App() {
         <Stack.Screen name="egoras-m-services" component={Screen13} options={{ headerShown:false }}  />
         <Stack.Screen name="topdeals" component={Screen14} options={{ headerShown:false }}  />
         <Stack.Screen name="details" component={Screen15} options={{ headerShown:false }}  />
+        {/* <Stack.Screen name="drawers" component={Screen16} options={{ headerShown:false }}  /> */}
+        {/* <Stack.Screen name="drawers1" component={Screen17} options={{ headerShown:false }}  /> */}
+        <Stack.Screen name="phonestr" component={Screen18} options={{ headerShown:false }}  />
 
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
+Parse.initialize("2xL77rlVP7laXwUxqNfFx1ZEwgT6QS2ajgov5b6w","3CPHh9K0UUgSshMqYVvBrV2uG1DF3P8foOheinVs"); //PASTE HERE YOUR Back4App APPLICATION ID AND YOUR JavaScript KEY
+Parse.serverURL = 'https://parseapi.back4app.com/'
