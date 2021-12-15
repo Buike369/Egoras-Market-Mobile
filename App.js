@@ -23,6 +23,11 @@ import Screen15 from './components/details';
 // import Screen16 from './components/drawer';
 // import Screen17 from './components/drawer';
 import Screen18 from './components/phones';
+// import Screen19 from './components/navDrawer';
+import Screen20 from './components/flashSales';
+import Screen21 from './components/footwear';
+
+
 
 
 
@@ -53,6 +58,9 @@ export default function App() {
         {/* <Stack.Screen name="drawers" component={Screen16} options={{ headerShown:false }}  /> */}
         {/* <Stack.Screen name="drawers1" component={Screen17} options={{ headerShown:false }}  /> */}
         <Stack.Screen name="phonestr" component={Screen18} options={{ headerShown:false }}  />
+        {/* <Stack.Screen name="phon" component={Screen19} options={{ headerShown:false }}  /> */}
+        <Stack.Screen name="flashSales" component={Screen20} options={{ headerShown:false }}  />
+        <Stack.Screen name="footwear" component={Screen21} options={{ headerShown:false }}  />
 
       </Stack.Navigator>
     </NavigationContainer>

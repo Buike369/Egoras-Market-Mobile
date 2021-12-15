@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState}from 'react';
 import {View,Text,StyleSheet,Pressable,SafeAreaView, ScrollView,Image,} from 'react-native';
 import {Ionicons } from 'react-native-vector-icons';
 import { 
@@ -37,6 +37,20 @@ import {
      const outPut1 =[{id:1,service:require('../assets/pw.png'),service1:require('../assets/pw1.png'),service2:require('../assets/pw2.png'),},{id:1,service:require('../assets/pw4.png'),service1:require('../assets/pw5.png'),service2:require('../assets/pw6.png')},{id:1,service:require('../assets/pw7.png'),service1:require('../assets/pw8.png'),service2:require('../assets/pw9.png')},{id:1,service:require('../assets/pw.png'),service1:require('../assets/pw1.png'),service2:require('../assets/pw2.png')}]
 
 const Slade =({navigation})=>{
+
+ const [web,setWeb]=useState('rat')
+
+    const back ={
+        backgroundColor:'blue'
+    }
+
+    const swing =()=>{
+        if (web === 'rat'){
+          console.log('kin')
+        }
+    }
+
+
 
     const homeBack5 =()=>{
         navigation.goBack()
@@ -115,10 +129,10 @@ const Slade =({navigation})=>{
 <Text style={{fontSize:9,fontWeight:'300'}}>Health & Beauty</Text>
 </View>
         </Pressable>
-       <View style={{alignItems:'center'}}>
+      <Pressable onPress={swing}><View style={{alignItems:'center'}} testID='rat'>
          <Image source={seem.service1} style={{width:70,height:40,marginBottom:10}}/>
          <Text style={{fontSize:9,fontWeight:'300'}}>Phone Deals</Text>
-      </View>
+      </View></Pressable>
       <View style={{alignItems:'center'}}>
          <Image source={seem.service2} style={{width:70,height:40,marginBottom:10}}/>
          <Text style={{fontSize:9,fontWeight:'300'}}>Fashion Deals</Text>

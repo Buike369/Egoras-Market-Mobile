@@ -20,6 +20,8 @@ import {
   import {useFonts} from 'expo-font';
   import AppLoading from 'expo-app-loading';
 
+  import Sliders6 from './slider4'
+
 
 
 const {width,height} = Dimensions.get('screen');
@@ -122,17 +124,30 @@ const DATA = [
 //   )
 
 
-const Item = ({img4})=>(
-    <View style={{backgroundColor:'white',padding:5}}>
-    <Image  source={img4} style={{width:110,height:110,marginBottom:15}} resizeMode="contain"/>
-    <Text style={{fontSize:10,marginBottom:8}}>Cherry Blossom & jojoba..</Text>
-    <Text style={{fontSize:12,marginBottom:10}}>₦3,750</Text>
-    <Text style={{fontSize:8,marginBottom:4,letterSpacing:0.1}}>89 items left</Text>
-    <View style={styles.container24}>
-    <View style={styles.container25}></View>
-    </View>
-</View>
-)
+// const Item = ({img4})=>(
+//     <View style={{backgroundColor:'white',padding:5}}>
+//     <Image  source={img4} style={{width:110,height:110,marginBottom:15}} resizeMode="contain"/>
+//     <Text style={{fontSize:10,marginBottom:8}}>Cherry Blossom & jojoba..</Text>
+//     <Text style={{fontSize:12,marginBottom:10}}>₦3,750</Text>
+//     <Text style={{fontSize:8,marginBottom:4,letterSpacing:0.1}}>89 items left</Text>
+//     <View style={styles.container24}>
+//     <View style={styles.container25}></View>
+//     </View>
+// </View>
+// )
+
+
+// const Item = (
+//     <View style={{backgroundColor:'white',padding:5}}>
+//     <Image  source={img4} style={{width:110,height:110,marginBottom:15}} resizeMode="contain"/>
+//     <Text style={{fontSize:10,marginBottom:8}}>Cherry Blossom & jojoba..</Text>
+//     <Text style={{fontSize:12,marginBottom:10}}>₦3,750</Text>
+//     <Text style={{fontSize:8,marginBottom:4,letterSpacing:0.1}}>89 items left</Text>
+//     <View style={styles.container24}>
+//     <View style={styles.container25}></View>
+//     </View>
+// </View>
+// )
 
 const carl =({navigation})=>{
 
@@ -183,31 +198,6 @@ const carl =({navigation})=>{
     //       navigation.navigate('City')
     //   }
 
-
-      const farway2 =()=>{
-          navigation.navigate('City1')
-      }
-   
-        const renderItem = ({ item }) => (
-          <Pressable onPress={ farway2}>
-          <Item img4={item.img1} />
-          </Pressable>  
-        );
-
-
-    const data =[{id:2,wan:require('../assets/pad.jpg')}, {id:3,wan:require('../assets/pad2.jpg')},{id:4,wan:require('../assets/pad1.gif')},{id:5,wan:require('../assets/pad3.gif')},{id:6,wan:require('../assets/pad.jpg')}];
-    const imageW = width * 1;
-    const imageH = (imageW * 0.57)- 5;
-
-
-    const changeR=()=>{
-       let i ;
-        for (i = 0; i < data.wan.lenght; i++){
-            console.log('hello Mr Kingsley');
-        }
-    }
-
-
     const Changes =(item)=>{
 
         let keyss = item.id
@@ -230,6 +220,71 @@ const carl =({navigation})=>{
         }
       
         }
+
+
+      const farway2 =({send})=>{
+
+        let chand = send;
+        if(chand = 1){
+            navigation.navigate('City1')
+        }
+
+        if(chand = 2){
+            navigation.navigate('City')
+        }
+         
+        if(chand = 3){
+            navigation.navigate('City5')
+        }
+
+        if(chand = 4){
+            navigation.navigate('City6')
+        }
+        if(chand = 5){
+            navigation.navigate('City1')
+        }
+        if(chand = 6){
+            navigation.navigate('City1')
+        }
+        if(chand = 7){
+            navigation.navigate('City1')
+        }
+        if(chand = 8){
+            navigation.navigate('City1')
+        }
+
+        if(chand = 9){
+            navigation.navigate('City1')
+        }
+        if(chand = 10){
+            navigation.navigate('City1')
+        }
+        if(chand = 11){
+            navigation.navigate('City1')
+        }
+      }
+   
+        const renderItem = ({ item }) => (
+          <Pressable onPress={ farway2}>
+          <Item img4={item.img1}  send={item.id}/>
+          </Pressable>  
+        );
+
+
+    const data =[{id:2,wan:require('../assets/pad.jpg')}, {id:3,wan:require('../assets/pad2.jpg')},{id:4,wan:require('../assets/pad1.gif')},{id:5,wan:require('../assets/pad3.gif')},{id:6,wan:require('../assets/pad.jpg')}];
+    const imageW = width * 1;
+    const imageH = (imageW * 0.57)- 5;
+
+
+    const changeR=()=>{
+       let i ;
+        for (i = 0; i < data.wan.lenght; i++){
+            console.log('hello Mr Kingsley');
+        }
+    }
+
+
+   
 
     return( 
         
@@ -278,6 +333,13 @@ const carl =({navigation})=>{
                  )
              } */}
              </View>
+
+
+
+            {/* <Sliders6/> */}
+
+
+
             
 
              <View style={{paddingHorizontal:10,marginBottom:5}}>
@@ -306,20 +368,22 @@ const carl =({navigation})=>{
 
 
              <View style={{flexDirection:'row',justifyContent:'space-around'}}>
-                 <View style={{width:80,alignItems:'center'}}>
+                <Pressable onPress={()=>navigation.navigate('flashSales')}><View style={{width:80,alignItems:'center'}}>
                      <Image source={require('../assets/black1.png')} style={styles.container3} />
                      <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Flash Sales</Text>
-                 </View>
+                 </View></Pressable>
                  <Pressable onPress={()=>navigation.navigate('phonestr')}>
                  <View style={{width:80,alignItems:'center'}}>
                      <Image source={require('../assets/tu.jpg')} style={styles.container3} />
                      <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Phones</Text>
                  </View>
                  </Pressable>
+                 <Pressable onPress={()=>navigation.navigate('footwear')}>
                  <View style={{width:80,alignItems:'center'}}>
                      <Image source={require('../assets/download.jpg')} style={styles.container3} />
-                     <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Foot wears</Text>
+                 <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Foot wears</Text>
                  </View>
+                 </Pressable>
                  <View style={{width:80,alignItems:'center'}}>
                      <Image source={require('../assets/download-1.jpg')} style={styles.container3} />
                      <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Sneakers</Text>
@@ -341,7 +405,24 @@ const carl =({navigation})=>{
    <SafeAreaView >
        <FlatList
           data={DATA}
-         renderItem={renderItem}
+         renderItem={({item})=>{
+             return(
+                 <Pressable>
+                      <View style={{backgroundColor:'white',padding:5}}>
+                           <Image  source={item.img1} style={{width:110,height:110,marginBottom:15}} resizeMode="contain"/>
+                           <Text style={{fontSize:10,marginBottom:8}}>Cherry Blossom & jojoba..</Text>
+                          <Text style={{fontSize:12,marginBottom:10}}>₦3,750</Text>
+                          <Text style={{fontSize:8,marginBottom:4,letterSpacing:0.1}}>89 items left</Text>
+                         <View style={styles.container24}>
+                          <View style={styles.container25}></View>
+                        </View>
+                    </View>
+                 </Pressable>
+                 
+             )
+         }
+         
+         }
           keyExtractor={item => item.id}
          horizontal
          showsHorizontalScrollIndicator={false}
