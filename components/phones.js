@@ -1,9 +1,13 @@
 
 import React,{useEffect,useState} from 'react';
-import {View,Text,StyleSheet, SafeAreaView,Pressable, ScrollView,Image} from 'react-native';
+import {View,Text,StyleSheet, SafeAreaView,Pressable, ScrollView,Image,Dimensions} from 'react-native';
 import {Ionicons } from 'react-native-vector-icons';
 
-const HeaderImg = [{id:3,img:require('../assets/ant.png')},{id:4,img:require('../assets/wedem.jpg')},{id:5,img:require('../assets/wedem.jpg')}]
+
+
+const {width,height} = Dimensions.get('screen');
+
+const HeaderImg = [{id:3,img:require('../assets/phoneswap.webp')},{id:4,img:require('../assets/phonesBanner3.jpg')},{id:5,img:require('../assets/phonesBanner4.jpg')}]
 
 const HeaderImg1 = [{id:3,img:require('../assets/phns.jpg')},{id:4,img:require('../assets/phns1.jpg')},{id:5,img:require('../assets/phns3.jpg')},{id:6,img:require('../assets/phns4.png')},{id:7,img:require('../assets/phns5.png')},{id:8,img:require('../assets/phns1.jpg')},{id:9,img:require('../assets/phns.jpg')}]
 
@@ -51,6 +55,9 @@ const Phones =({navigation})=>{
        const [count2,setCount2] = useState(true);
        const [count3,setCount3] = useState(false);
 
+       const imageW = width * 1;
+       const imageH = (imageW * 0.27) - 5;
+
 
        const counting = ()=>{
 
@@ -92,7 +99,7 @@ const Phones =({navigation})=>{
 
          <ScrollView showsVerticalScrollIndicator={false}>
            <View style={{paddingHorizontal:15,paddingVertical:10}}>
-               <Image source={require('../assets/area1.jpg')} resizeMode="contain" style={{width:'100%',height:150}}/>
+               <Image source={require('../assets/phonesBanner2.jpg')} resizeMode="contain" style={{width:'100%',height:150}}/>
            </View>
 
            {/*third section*/}
@@ -102,7 +109,7 @@ const Phones =({navigation})=>{
            <ScrollView horizontal style={{paddingVertical:8,backgroundColor:'#fff',marginTop:8}} showsHorizontalScrollIndicator={false}>
            {HeaderImg.map((tm)=>(
                    <View key={tm.id}>
-                       <Image source={tm.img} style={{width:250,height:150,marginRight:8}} resizeMode="cover"/>
+                       <Image source={tm.img} style={{width:250,height:150,marginRight:8}} resizeMode="contain"/>
                    </View>
                ))
 
@@ -139,20 +146,20 @@ const Phones =({navigation})=>{
            </View>
            <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',backgroundColor:'#fff',paddingHorizontal:3,paddingBottom:15}}>
              <View style={{width:"23%",alignItems:'center'}}>
-                <Image source={require('../assets/rj.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
-                <Text style={{fontSize:10,color:'#000',}}>Andriod Phones</Text>
+                <Image source={require('../assets/iphone12.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
+                <Text style={{fontSize:10,color:'#000',}}>iphone Phones</Text>
              </View>
              <View style={{width:'23%',alignItems:'center'}}>
-                <Image source={require('../assets/rj.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
-                <Text style={{fontSize:10,color:'#000',}}>Andriod Phones</Text>
+                <Image source={require('../assets/OppoK3.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
+                <Text style={{fontSize:10,color:'#000',}}>Oppo Phones</Text>
              </View>
              <View style={{width:'23%',alignItems:'center'}}>
-                <Image source={require('../assets/rj.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
-                <Text style={{fontSize:10,color:'#000',}}>Andriod Phones</Text>
+                <Image source={require('../assets/infinixHot10.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="contain" />
+                <Text style={{fontSize:10,color:'#000',}}>infinix Phones</Text>
              </View>
              <View style={{width:'23%',alignItems:'center'}}>
-                <Image source={require('../assets/rj.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
-                <Text style={{fontSize:10,color:'#000',}}>Andriod Phones</Text>
+                <Image source={require('../assets/Samsung.png')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="contain" />
+                <Text style={{fontSize:10,color:'#000',}}>Samsung Phones</Text>
              </View>
            </View>
 
@@ -180,8 +187,12 @@ const Phones =({navigation})=>{
            </View>
      {/* another section*/}
            <View style={{flexDirection:'row',paddingVertical:8}}>
-               <Image source={require('../assets/fur.jpg')} style={{width:'50%',height:140}} resizeMode="cover"/>
-               <Image source={require('../assets/fur1.jpg')} style={{width:'50%',height:140}} resizeMode="cover"/>
+               <View style={{width:'50%'}}>
+                   <Image source={require('../assets/fur.jpg')} style={{width:'100%',height:imageH }} resizeMode="cover"/>
+                </View>
+               <View style={{width:'50%'}}>
+                   <Image source={require('../assets/fur1.jpg')} style={{width:'100%',height:imageH }} resizeMode="cover"/>
+                </View>
            </View>
 
            {/* <View style={{flexDirection:'row',paddingTop:10,paddingBottom:14,paddingHorizontal:10,alignItems:'center',justifyContent:'space-between',backgroundColor:'#fff'}}>
@@ -206,15 +217,15 @@ const Phones =({navigation})=>{
            </View>
            <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',backgroundColor:'#fff',paddingHorizontal:3,paddingBottom:15}}>
              <View style={{width:"23%",alignItems:'center'}}>
-                <Image source={require('../assets/rj.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
+                <Image source={require('../assets/webph.webp')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
+                <Text style={{fontSize:10,color:'#000',}}>iphone Phones</Text>
+             </View>
+             <View style={{width:'23%',alignItems:'center'}}>
+                <Image source={require('../assets/garri.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
                 <Text style={{fontSize:10,color:'#000',}}>Andriod Phones</Text>
              </View>
              <View style={{width:'23%',alignItems:'center'}}>
-                <Image source={require('../assets/rj.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
-                <Text style={{fontSize:10,color:'#000',}}>Andriod Phones</Text>
-             </View>
-             <View style={{width:'23%',alignItems:'center'}}>
-                <Image source={require('../assets/rj.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
+                <Image source={require('../assets/garri2.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
                 <Text style={{fontSize:10,color:'#000',}}>Andriod Phones</Text>
              </View>
              <View style={{width:'23%',alignItems:'center'}}>
@@ -267,7 +278,7 @@ const Phones =({navigation})=>{
            {/* anothersection*/}
 
           <View>
-              <Image source={require('../assets/orange1.png')} style={{width:'100%',height:150}} resizeMode="cover"/>
+              <Image source={require('../assets/tabletsBanner.jpg')} style={{width:'100%',height:150}} resizeMode="cover"/>
           </View>
           {/* anothersection*/}
 
@@ -276,19 +287,19 @@ const Phones =({navigation})=>{
            </View>
            <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',backgroundColor:'#fff',paddingHorizontal:3,paddingBottom:15}}>
              <View style={{width:"23%",alignItems:'center'}}>
-                <Image source={require('../assets/rj.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
+                <Image source={require('../assets/tablets1.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="contain" />
                 <Text style={{fontSize:10,color:'#000',}}>Andriod Phones</Text>
              </View>
              <View style={{width:'23%',alignItems:'center'}}>
-                <Image source={require('../assets/rj.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
+                <Image source={require('../assets/tablets2.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="contain" />
                 <Text style={{fontSize:10,color:'#000',}}>Andriod Phones</Text>
              </View>
              <View style={{width:'23%',alignItems:'center'}}>
-                <Image source={require('../assets/rj.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
+                <Image source={require('../assets/tablet3.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="contain" />
                 <Text style={{fontSize:10,color:'#000',}}>Andriod Phones</Text>
              </View>
              <View style={{width:'23%',alignItems:'center'}}>
-                <Image source={require('../assets/rj.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="cover" />
+                <Image source={require('../assets/tablets4.jpg')} style={{width:'100%',height:120,borderRadius:3,marginBottom:8}} resizeMode="contain" />
                 <Text style={{fontSize:10,color:'#000',}}>Andriod Phones</Text>
              </View>
            </View>

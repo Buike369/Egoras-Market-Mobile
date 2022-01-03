@@ -1,5 +1,5 @@
-import React,{useState,useEffect} from 'react';
-import {View,Text,FlatList,Image,Animated,Dimensions,StyleSheet,TouchableOpacity,TextInput,SafeAreaView, ScrollView, ImageBackground, VirtualizedList, Pressable,Platform,StatusBar} from 'react-native';
+import React,{useState,useEffect,useRef, useCallback} from 'react';
+import {View,Text,FlatList,Image,Animated,Dimensions,StyleSheet,TouchableOpacity,TextInput,SafeAreaView, ScrollView, ImageBackground, VirtualizedList, Pressable,Platform,StatusBar,ActivityIndicator} from 'react-native';
 import {Ionicons } from 'react-native-vector-icons';
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 import Search from './home7';
@@ -152,26 +152,110 @@ const DATA = [
 const carl =({navigation})=>{
 
 
+     const [selectIndex,setSelectIndex]= useState(0);
+
+
+     const [dimension, setDimension] = useState(Dimensions.get('window'));
+     const [selectedIndex, setSelectedIndex] = useState(0);
+   
+     const scrollRef = useRef();
+     let intervalId = null;
+   
+     const onChange = () => {
+       setDimension(Dimensions.get('window'));
+     };
+   
+     useEffect(() => {
+       Dimensions.addEventListener('change', onChange);
+       return () => {
+         Dimensions.removeEventListener('change', onChange);
+       };
+     });
+   
+     const onSlideChange = useCallback(() => {
+       // Calculate newIndex here and use it to update your state and to scroll to the new slide
+       const newIndex =
+         selectedIndex === carouselImages.length - 1 ? 0 : selectedIndex + 1;
+   
+       setSelectedIndex(newIndex);
+   
+       scrollRef?.current?.scrollTo({
+         animated: true,
+         y: 0,
+         x: dimension.width * newIndex,
+       });
+     }, [selectedIndex]);
+   
+     const startInterval = useCallback(() => {
+       intervalId = setInterval(onSlideChange, 5000);
+     }, [onSlideChange]);
+   
+     useEffect(() => {
+       startInterval();
+   
+       return () => {
+         // Clear the interval when component unmounts, otherwise you could have memory leaks
+         clearInterval(intervalId);
+       };
+     }, [onSlideChange]);
+   
+     const onTouchStart = () => {
+       // As soon as the user touches the slide, stop the automatic sliding
+       clearInterval(intervalId);
+     };
+   
+     const onTouchEnd = () => {
+       // As soon as the user stops touching the slide, releases it, start the automatic sliding again
+       startInterval();
+     };
+   
+     const carouselImages = [
+       {url: require('../assets/pad.jpg')},
+       {url: require('../assets/pad1.gif')},
+       {url: require('../assets/pad2.jpg')},
+       {url: require('../assets/pad3.gif')},
+       {url: require('../assets/pad1.gif')},
+     ];
+   
+     const setIndex = event => {
+       let viewSize = event.nativeEvent.layoutMeasurement.width;
+       let contentOffset = event.nativeEvent.contentOffset.x;
+       let carouselIndex = Math.floor(contentOffset / viewSize);
+       setSelectedIndex(carouselIndex);
+     };
+
+{/* */}
       useEffect(()=>{
        
      
-     changeR
+     changeR;
+    
 
       },[])
 
 
-      async function saveNewPerson() {
-        const person = new Parse.Object("Person");
+
+    //   const  setSelectIndex2 = event =>{
+    //     const viewSize = event.nativeEvent.layoutMeasurement.width;
+    //     const contentOffset =event.nativeEvent.contentOffset.x;
+
+    //     const stand =Math.floor(contentOffset/viewSize);
+    //     setSelectIndex({stand})
+    // }
+
+
+    //   async function saveNewPerson() {
+    //     const person = new Parse.Object("Person");
       
-        person.set("name", "John Snow");
-        person.set("age", 27);
-        try {
-          let result = await person.save()
-          alert('New object created with objectId: ' + result.id);
-          } catch(error) {
-              alert('Failed to create new object, with error code: ' + error.message);
-          }
-        }
+    //     person.set("name", "John Snow");
+    //     person.set("age", 27);
+    //     try {
+    //       let result = await person.save()
+    //       alert('New object created with objectId: ' + result.id);
+    //       } catch(error) {
+    //           alert('Failed to create new object, with error code: ' + error.message);
+    //       }
+    //     }
 
      
 
@@ -198,24 +282,24 @@ const carl =({navigation})=>{
     //       navigation.navigate('City')
     //   }
 
-    const Changes =(item)=>{
+    const Changes =(value)=>{
 
-        let keyss = item.id
-        if (keyss == 2){
+        let keyss = value.id
+        if (keyss == 15){
             navigation.navigate('City')
         }
 
-         if( keyss == 3){
+         if( keyss == 16){
             navigation.navigate('City2')
             }
         
-        if(keyss == 4){
+        if(keyss == 17){
             navigation.navigate('City6')
            }
-        if (keyss == 5){
+        if (keyss == 18){
             navigation.navigate('City')
            }
-        if(keyss == 6){
+        if(keyss == 19){
             navigation.navigate('City5')
         }
       
@@ -272,6 +356,10 @@ const carl =({navigation})=>{
 
 
     const data =[{id:2,wan:require('../assets/pad.jpg')}, {id:3,wan:require('../assets/pad2.jpg')},{id:4,wan:require('../assets/pad1.gif')},{id:5,wan:require('../assets/pad3.gif')},{id:6,wan:require('../assets/pad.jpg')}];
+
+    const data2 =[{id:15,wan:require('../assets/pad.jpg')}, {id:16,wan:require('../assets/pad2.jpg')},{id:17,wan:require('../assets/pad1.gif')},{id:18,wan:require('../assets/pad3.gif')},{id:19,wan:require('../assets/pad.jpg')}];
+
+    
     const imageW = width * 1;
     const imageH = (imageW * 0.57)- 5;
 
@@ -284,6 +372,7 @@ const carl =({navigation})=>{
     }
 
 
+   
    
 
     return( 
@@ -307,22 +396,30 @@ const carl =({navigation})=>{
            {/* <Search/> */}
      <ScrollView showsVerticalScrollIndicator={false}>
 
-        <View>
-             <FlatList  data={data}
+        {/* <View> */}
+
+             {/* <FlatList  data={data}
              horizontal
              pagingEnabled
              showsHorizontalScrollIndicator={false}
-            //    keyExtractor={(_,index)=>index.toString()}
                keyExtractor={(item)=>item.id}
                renderItem={({item})=>{
                    return  <Pressable onPress={()=>Changes(item)}>
                    <View style={{width,alignItems:'center'}}>
                        <Image source={item.wan} style={{width:'100%',height:imageH,resizeMode:'contain',alignItems:'center'}}/>
+
+                       <View style={styles.circleDiv}>
+                           {data.map((image ,i)=>(
+                               <View key={image} style={[styles.circleDivContent,{opacity: i === selectIndex ? 0.5 : 1}]}> 
+
+                               </View>
+                           ))}
+                       </View>
                      
                    </View>
                    </Pressable>
                }}
-             />
+             /> */}
 {/* 
              {
                  data.map((items,yan)=>(
@@ -332,11 +429,75 @@ const carl =({navigation})=>{
                      )
                  )
              } */}
-             </View>
+             {/* </View> */}
 
 
 
             {/* <Sliders6/> */}
+
+            {/*  carousel slide */}
+
+    <View style={{width: dimension.width}}>
+      <ScrollView
+        horizontal
+        ref={scrollRef}
+        onMomentumScrollEnd={setIndex}
+        showsHorizontalScrollIndicator={false}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+        pagingEnabled>
+        {data2.map((value, key) => (
+         <Pressable  onPress={()=>Changes(value)}>
+             <Image
+            source={value.wan}
+            style={{width: dimension?.width, height:imageH, resizeMode: 'cover'}}
+            PlaceholderContent={<ActivityIndicator />}
+          />
+
+          {/* <Image source={value.url} style={{width:'100%',height:250,resizeMode:'contain',alignItems:'center'}} PlaceholderContent={<ActivityIndicator />}/> */}
+
+          <View
+        style={{
+          flexDirection: 'row',
+          position: 'absolute',
+          bottom: 15,
+          alignSelf: 'center',
+        }}>
+        {data2.map((val, key) => (
+        //   <Text
+        //     key={key}
+        //     style={key === selectedIndex ? {color: 'white'} : {color: '#888'}}>
+        //     ⬤
+        //   </Text>
+          <View key={key} style={[styles.circleDivContent,{opacity:key === selectedIndex ? 0.5 : 1}]}> 
+
+          </View>
+          
+        ))}
+      </View>
+          </Pressable>
+        ))}
+      </ScrollView>
+      {/* <View
+        style={{
+          flexDirection: 'row',
+          position: 'absolute',
+          bottom: 15,
+          alignSelf: 'center',
+        }}>
+        {data2.map((val, key) => (
+        //   <Text
+        //     key={key}
+        //     style={key === selectedIndex ? {color: 'white'} : {color: '#888'}}>
+        //     ⬤
+        //   </Text>
+          <View key={key} style={[styles.circleDivContent,{opacity:key === selectedIndex ? 0.5 : 1}]}> 
+
+          </View>
+          
+        ))}
+      </View> */}
+    </View>
 
 
 
@@ -360,10 +521,12 @@ const carl =({navigation})=>{
                      <Image source={require('../assets/black1.png')} style={styles.container3} />
                      <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Borrow Money</Text>
                  </View>
+                 <Pressable onPress={()=>navigation.navigate('carousel')}>
                  <View style={{width:80,alignItems:'center'}}>
                      <Image source={require('../assets/black3.png')} style={styles.container3} />
                      <Text style={{fontSize:10,fontWeight:'300',color:'#000'}}>Egoras Prime</Text>
                  </View>
+                 </Pressable>
              </View>
 
 
@@ -401,7 +564,7 @@ const carl =({navigation})=>{
            </View>
 
              
-  <View style={{paddingHorizontal:1}}>
+           <View style={{paddingHorizontal:1}}>
    <SafeAreaView >
        <FlatList
           data={DATA}
@@ -409,6 +572,36 @@ const carl =({navigation})=>{
              return(
                  <Pressable>
                       <View style={{backgroundColor:'white',padding:5}}>
+                           <Image  source={item.img1} style={{width:110,height:110,marginBottom:15}} resizeMode="contain"/>
+                           <Text style={{fontSize:10,marginBottom:8}}>Cherry Blossom & jojoba..</Text>
+                          <Text style={{fontSize:12,marginBottom:10}}>₦3,750</Text>
+                          <Text style={{fontSize:8,marginBottom:4,letterSpacing:0.1}}>89 items left</Text>
+                         <View style={styles.container24}>
+                          <View style={styles.container25}></View>
+                        </View>
+                    </View>
+                 </Pressable>
+                 
+             )
+         }
+         
+         }
+          keyExtractor={item => item.id}
+         horizontal
+         showsHorizontalScrollIndicator={false}
+         />
+   </SafeAreaView> 
+   </View>
+  
+
+           <View style={{paddingHorizontal:1}}>
+   <SafeAreaView >
+       <FlatList
+          data={DATA}
+         renderItem={({item})=>{
+             return(
+                 <Pressable>
+                      <View style={{backgroundColor:'white',padding:5,}}>
                            <Image  source={item.img1} style={{width:110,height:110,marginBottom:15}} resizeMode="contain"/>
                            <Text style={{fontSize:10,marginBottom:8}}>Cherry Blossom & jojoba..</Text>
                           <Text style={{fontSize:12,marginBottom:10}}>₦3,750</Text>
@@ -1537,20 +1730,19 @@ container26:{
 circleDiv:{
     position:'absolute',
     bottom:15,
-    height:10,
     flexDirection:'row',
-    // justifyContent:'center',
-    alignItems:'center'
-
-
+     justifyContent:'center',
+    alignItems:'center',
+    width:'100%',
 },
 circleDivContent:{
     width:6,
     height:6,
-    borderRadius:50,
+    borderRadius:3,
     backgroundColor:'#fff',
     marginRight:5
-}
+},
+
 
 
 })
